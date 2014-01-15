@@ -1,6 +1,6 @@
 <li class="list-group-item">
     <% game_feed_item.teams.each_with_index do |team, index| %>
-      <%= raw team.players.map { |player| link_to(image_tag(gravatar_url(player, :size => 40)) + player.display_name_for_result(current_player, game_feed_item), player_game_path(player, @game)) }.join(" and ") %>
+      <%= raw team.players.map { |player| link_to(player.display_name_for_result(current_player, game_feed_item), player_game_path(player, @game)) }.join(" and ") %>
       <% if index == 0 %> beat <% end %>
     <% end %>
     <%= time_ago_in_words game_feed_item.created_at %> ago
