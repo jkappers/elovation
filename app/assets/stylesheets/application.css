@@ -5,3 +5,14 @@
  *= require kendo.common-bootstrap.min
  *= require screen
 */
+
+.recommendations .panel-title {
+  text-align: center;
+  font-size: 26px;
+  font-weight: bold;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.recommendations a span {
+  margin-left: 10px;
+}
