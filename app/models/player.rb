@@ -60,10 +60,6 @@ class Player < ActiveRecord::Base
     self.name.split(' ')[0]
 	end
 	
-	def current_rating_for_game(game)
-	  
-	end
-	
 	def display_name_for_result(current_player, result)
 	  _name = display_name(current_player)
 	  rhe = result.rating_history_events.detect { |rhe| rhe.rating.player == self }

@@ -5,7 +5,11 @@
 <div class="row">
   <div class="col-md-7 col-lg-7">
     <div class="panel panel-default">
-      <div class="panel-heading">Recent Matches</div>
+      <div class="panel-heading">
+        Recent Matches
+        <button class="btn btn-primary pull-right" id="rollback">Rollback</button>
+        <div class="clearfix"></div>
+      </div>
       <% if @game.recent_results.any? %>
         <%= render :partial => 'shared/game_feed', :object => @game.recent_results %>
       <% else %>
@@ -19,7 +23,7 @@
     <div class="panel panel-default">
       <div class="panel-heading">Top Ranked</div>
       <% if @game.recent_results.any? %>
-        <table class="table">
+        <table class="table tableSorter">
           <thead>
             <tr>
               <th>#</th>              
@@ -39,3 +43,40 @@
     </div>    
   </div>
 </div>
+
+<script>
+  var recent_games = <%= raw @game.recent_results.map {|r| r.to_recent_json }.to_json %>;
+  var i = 0;
+  function nextGame() {
+    setTimeout(function() {
+      highlightGame();
+      $('table th').eq(2).click();
+      if(i < recent_games.length) nextGame()
+    }, 2000);
+  }
+  
+  function highlightGame(game) {
+    var game = recent_games[i];
+    $('.highlight').removeClass('highlight');
+    $.each(game, function() {
+      console.log('player')
+      id = this.id;
+      change = this.change * -1;
+      $row = $('table tr[player-id=' + id + ']');
+      $cell = $('td', $row).eq(2)
+      rating = parseInt($cell.html())
+      $cell.html(rating + change);
+      $row.addClass('highlight');
+    });
+    i++;
+  }
+  
+  $(function(){
+    $('table.tableSorter').tableSort();
+    
+    $('#rollback').click(function(){
+      highlightGame()
+      nextGame()
+    });
+  })
+</script>

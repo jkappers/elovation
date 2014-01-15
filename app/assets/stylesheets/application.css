@@ -16,3 +16,7 @@
 .recommendations a span {
   margin-left: 10px;
 }
+
+tr.highlight td {
+  background-color: rgba(0,255,0,0.5);
+}

@@ -3,3 +3,4 @@
 //= require bootstrap
 //= require chosen
 //= require kendo.all.min
+//= require tsort

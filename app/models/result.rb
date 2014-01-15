@@ -56,6 +56,17 @@ class Result < ActiveRecord::Base
       :created_at => created_at.utc.to_s
     }
   end
+  
+  def to_recent_json
+    teams.map do |team|
+      team.players.map do |player|
+        {
+          id: player.id,
+          change: self.rating_history_events.detect { |rhe| rhe.rating.player == player }.change
+        }
+      end
+    end.flatten
+  end
 
   def most_recent?
     teams.all? do |team|
