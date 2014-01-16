@@ -2,19 +2,26 @@
 	<h2>Most Recently</h2>
 	<div class="game">
 		<% most_recent.teams.each_with_index do |team, index| %>
-		  <% team.players.map do |player| %>
-		  	<div class="player">
-		  		<%= image_tag(gravatar_url(player, :size => 250)) %>
-		  		<h3><a href="<%= player_game_path(player, @game) %>"><%= player.name %></a></h3>
-		  	</div>
-		  	<% if index == 0 %>
-		  		<div class="versus">
-		  			<div class="versus-text">
-		  				defeated
-		  			</div>
-		  		</div>
-		  	<% end %>
-		  <% end %>
+		  <% if team.players.count > 1 %>
+		  <div class='team'>
+  		  <% team.players.each do |player| %>
+  		    <% rating = @all_ratings.detect { |r| r.player_id == player.id } %>
+          <% rank = @all_ratings.index(rating) %>
+  		  	<div class="player">
+  		  	  <%= rank + 1 %>
+    		    <h3><%= rating.value %></eh3>
+  		  		<%= image_tag(gravatar_url(player, :size => 250)) %>
+  		  		<h3><a href="<%= player_game_path(player, @game) %>"><%= player.name %></a></h3>
+  		  	</div>
+  		  <% end %>
+		  </div>
+		  <% if index == 0 %>
+	  		<div class="versus">
+	  			<div class="versus-text">
+	  				defeated
+	  			</div>
+	  		</div>
+	  	<% end %>
 		<% end %>
 	</div>
 </div>

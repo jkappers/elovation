@@ -59,6 +59,9 @@ class Player < ActiveRecord::Base
 		return "You" if current_player && self == current_player
     self.name.split(' ')[0]
 	end
+	def rating_for_game(game)
+	  
+	end
 	
 	def display_name_for_result(current_player, result)
 	  _name = display_name(current_player)
