@@ -54,9 +54,9 @@ class Recommender
     
     def _players_not_found(players)
       if players.blank?
-        Player.where("id <> ?", @player.id)
+        Player.where("players.id <> ?", @player.id)
       else
-        Player.where("id not in (?)", players.map(&:id) + [@player.id])
+        Player.where("players.id not in (?)", players.map(&:id) + [@player.id])
       end
     end
   
