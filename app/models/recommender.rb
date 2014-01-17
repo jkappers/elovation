@@ -36,7 +36,7 @@ class Recommender
   
   def nearest_rating
     current_rating = @player.ratings.where(:game_id => @game.id).first.value
-    players = Player.joins(:ratings).includes(:ratings).where('ratings.game_id = ? AND players.id <> ?', @game.id, @player.id)
+    players = Player.active.joins(:ratings).includes(:ratings).where('ratings.game_id = ? AND players.id <> ?', @game.id, @player.id)
     sorted = players.sort { |p1,p2| _rating_difference(current_rating, p1.ratings.first) <=> _rating_difference(current_rating, p2.ratings.first) }
     sorted
   end
@@ -54,9 +54,9 @@ class Recommender
     
     def _players_not_found(players)
       if players.blank?
-        Player.where("players.id <> ?", @player.id)
+        Player.active.where("players.id <> ?", @player.id)
       else
-        Player.where("players.id not in (?)", players.map(&:id) + [@player.id])
+        Player.active.where("players.id not in (?)", players.map(&:id) + [@player.id])
       end
     end
   
