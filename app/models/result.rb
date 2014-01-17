@@ -1,5 +1,5 @@
 class Result < ActiveRecord::Base
-  has_many :teams, :dependent => :destroy
+  has_and_belongs_to_many :teams
   has_many :rating_history_events
   belongs_to :game
 

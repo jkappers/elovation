@@ -13,7 +13,9 @@ class ResultService
     teams = teams.reverse.drop_while{ |team| team[:players].empty? }.reverse
 
     teams.each do |team|
-      result.teams.build rank: team[:rank], player_ids: team[:players]
+      p_team = Team.find_or_initialize_with_player_ids(team[:players])
+      p_team.rank = team[:rank]
+      result.teams << p_team
     end
 
     if result.valid?
