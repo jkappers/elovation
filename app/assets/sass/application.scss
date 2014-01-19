@@ -1,79 +1,152 @@
-/* Welcome to Compass.
- * In this file you should write your main styles. (or centralize your imports)
- * Import this file using the following HTML or equivalent:
- * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+// Welcome to Compass.
+// In this file you should write your main styles. (or centralize your imports)
+// Import this file using the following HTML or equivalent:
+// <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
 
 @import "compass/reset";
 @import "bootstrap/bootstrap.scss";
 
+// ---------------------------
+// ---------------------------
+//
+// Most Recent Game
+//
+// ---------------------------
+// ---------------------------
 
 .most-recent{
+	clear: both;
+	margin: 0 0 40px;
+	overflow: hidden;
+	background: #222;
+	padding: 20px 0;
+	position: relative;
+
+	h2 {
+		text-align: center;
+		font-size: 3em;
+		color: #efefef;
+		text-shadow: 0 1px 0 #000, 
+					 0 2px 0 #111, 
+					 0 3px 0 #222, 
+					 0 4px 0 #333, 
+					 0 5px 0 #444;
+		margin: 10px 0;
+		border-bottom: 10px double #000;
+		padding: 0 0 0.5em ;
+	}
+
+	h3{
+		font-weight: 700;
+		font-style: italic;
+		font-size: 1.5em;
+		position: relative;
+		text-transform: uppercase;
+		z-index: 0;
 		clear: both;
-		margin: 0 0 40px;
+		padding: 0 0 2em 0;
+		width: 100%;
+		margin: 0 auto;
+		text-shadow: 0 1px 0 #000, 
+					 0 2px 0 #111, 
+					 0 3px 0 #222, 
+					 0 4px 0 #333, 
+					 0 5px 0 #444;
+	}
+
+	a {
+		text-decoration: none;
+		color: #efefef;
+	}
+
+	img{
+		margin: 0 0 10px 0;
+		float: left;
+		width: 100%;
+	}
+
+	.game{
+		padding: 0;
 		overflow: hidden;
-		background: #222;
-		padding: 20px 0;
+		clear: both;
+		width: 100%;
+		margin: 0 auto;
+	}
+
+	.player {
+		width: 50%;
+		float: left;
+		text-align: center;
 		position: relative;
 
-		h2 {
-			text-align: center;
-			font-size: 20px;
-			color: #efefef;
-			margin: 10px 0;
-		}
-
-		a {
-			text-decoration: none;
-			color: #efefef;
-		}
-
 		img{
-			border: 1px solid #fff;
-			margin: 0 0 10px 0;
-			float: left;
-			width: 100%;
+			position: relative;
+			z-index: 0;
+			box-shadow: -1em -1em 2em rgba(0, 0, 0, 0.5)
 		}
 
-		.game{
-			padding: 0;
-			overflow: hidden;
-			clear: both;
-			width: 60%;
-			margin: 0 auto;
-		}
+		&:first-child{
+			margin: -8% -10% 0 0;
 
-		.player {
-			width: 50%;
-			float: left;
-			text-align: center;
 		}
 	}
 
-	.versus-text{
-		display: block;
-		position: absolute;
-		color: #222;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		background: #efefef;
-		border-radius: 200px;
-		margin-left: -50%;
-		font-family: 'Georgia', serif;
-		font-style: italic;
-		font-size: 20px;
-		border: 1px solid #222;
+	.team{
+		width: 50%;
+		overflow: hidden;
+		float: left;
 
-	}
+		&.doubles{
+			padding: 5em 0 0 5%;
 
-	.versus {
-		position: absolute;
-		width: 100%;
-		left: 50%;
-		bottom: 10px;
-		z-index: 1;
-		height: 100px;
-		width: 100px;
-		text-align: center;
-		line-height: 100px;
+			img{
+
+				&:first-child{
+					margin: 0 -1% 0 0;
+				}
+			}
+		}
+		
+		&:nth-child(n+2){
+			.player img { 
+				-webkit-filter: grayscale(100%);
+			}
+		}
+
+		.rank {
+			display: block;
+			background: #FB5703;
+			color: #efefef;
+			height: 2em;
+			width: 2em;
+			line-height: 2em;
+			font-weight: bold;
+			position: absolute;
+			z-index: 1;
+		}
 	}
+}
+
+.versus-text{
+	display: block;
+	position: absolute;
+	left: 0;
+	width: 100%;
+	height: 15em;
+	margin-left: -50%;
+	text-indent: 100%;
+	overflow: hidden;
+	white-space: nowrap;
+	background: url('/assets/versus.png') no-repeat center center;
+	background-size: cover;
+}
+
+.versus {
+	position: absolute;
+	width: 100%;
+	left: 50%;
+	top: 30%;
+	z-index: 1;
+	height: 15em;
+	width: 10em;
+}
