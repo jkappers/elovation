@@ -13,6 +13,7 @@ gem 'cancan', '~> 1.6.10'
 gem 'gravtastic'
 gem 'urbanairship'
 gem 'jbuilder', '~> 1.5.3'
+gem 'compass-rails'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.5'
