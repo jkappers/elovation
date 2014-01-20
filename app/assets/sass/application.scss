@@ -1,10 +1,14 @@
-// Welcome to Compass.
-// In this file you should write your main styles. (or centralize your imports)
-// Import this file using the following HTML or equivalent:
-// <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+// ---------------------------
+// ---------------------------
+//
+// Imports
+//
+// ---------------------------
+// ---------------------------
 
 @import "compass/reset";
 @import "bootstrap/bootstrap.scss";
+@import "bootstrap-overrides.scss";
 
 // ---------------------------
 // ---------------------------
@@ -157,4 +161,17 @@
 	z-index: 1;
 	height: 15em;
 	width: 10em;
+}
+
+
+
+.recommendations .panel-title{
+	text-align:center;
+	font-size:26px;
+	font-weight:bold;
+	font-family:"Helvetica Neue", Helvetica, Arial, sans-serif
+}
+
+.recommendations a span{
+	margin-left:10px
 }

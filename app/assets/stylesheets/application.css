@@ -6333,7 +6333,728 @@ td.visible-print {
   th.hidden-print,
   td.hidden-print {
     display: none !important; } }
-/* line 17, ../sass/application.scss */
+/* line 4, ../sass/bootstrap-overrides.scss */
+body {
+  padding: 75px 0 0; }
+
+/* line 8, ../sass/bootstrap-overrides.scss */
+h1, h2, h3, h4, h5, h6 {
+  margin: 0 0 20px;
+  font-weight: 100; }
+
+/* `Glyphicons Override
+/****************************************/
+@font-face {
+  font-family: 'Glyphicons Halflings';
+  src: url("/assets/glyphicons-halflings-regular.eot");
+  src: url("/assets/glyphicons-halflings-regular.eot?#iefix") format("embedded-opentype"), url("/assets/glyphicons-halflings-regular.woff") format("woff"), url("/assets/glyphicons-halflings-regular.ttf") format("truetype"), url("/assets/glyphicons-halflings-regular.svg#glyphicons-halflingsregular") format("svg"); }
+
+/* `Bootstrap Overrides
+/******************************/
+/* line 27, ../sass/bootstrap-overrides.scss */
+.page-header {
+  margin: 0 0 20px; }
+  /* line 29, ../sass/bootstrap-overrides.scss */
+  .page-header h1, .page-header h2, .page-header h3, .page-header h4, .page-header h5, .page-header h6 {
+    margin: 0; }
+  /* line 33, ../sass/bootstrap-overrides.scss */
+  .page-header small {
+    font-weight: 100; }
+
+/* line 38, ../sass/bootstrap-overrides.scss */
+.panel .table > tbody > tr > td {
+  line-height: 32px; }
+
+/* line 42, ../sass/bootstrap-overrides.scss */
+.panel img {
+  width: 32px;
+  height: 32px; }
+
+/* `Chosen Overrides
+/******************************/
+/* https://gist.github.com/jkappers/8009974/raw/631fd82d587b5b77e1b3029e132777b809b5c828/chosen-bootstrap.css */
+/* line 50, ../sass/bootstrap-overrides.scss */
+select.form-control + .chosen-container.chosen-container-single .chosen-single {
+  display: block;
+  width: 100%;
+  height: 34px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.428571429;
+  color: #555;
+  vertical-align: middle;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -webkit-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+  transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+  background-image: none; }
+
+/* line 69, ../sass/bootstrap-overrides.scss */
+select.form-control + .chosen-container.chosen-container-single .chosen-single div {
+  top: 4px;
+  color: #000; }
+
+/* line 74, ../sass/bootstrap-overrides.scss */
+select.form-control + .chosen-container .chosen-drop {
+  background-color: #FFF;
+  border: 1px solid #CCC;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+  background-clip: padding-box;
+  margin: 2px 0 0; }
+
+/* line 86, ../sass/bootstrap-overrides.scss */
+select.form-control + .chosen-container .chosen-search input[type=text] {
+  display: block;
+  width: 100%;
+  height: 34px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.428571429;
+  color: #555;
+  vertical-align: middle;
+  background-color: #FFF;
+  border: 1px solid #CCC;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  background-image: none; }
+
+/* line 105, ../sass/bootstrap-overrides.scss */
+select.form-control + .chosen-container .chosen-results {
+  margin: 2px 0 0;
+  padding: 5px 0;
+  font-size: 14px;
+  list-style: none;
+  background-color: #fff;
+  margin-bottom: 5px; }
+
+/* line 115, ../sass/bootstrap-overrides.scss */
+select.form-control + .chosen-container .chosen-results li,
+select.form-control + .chosen-container .chosen-results li.active-result {
+  display: block;
+  padding: 3px 20px;
+  clear: both;
+  font-weight: normal;
+  line-height: 1.428571429;
+  color: #333;
+  white-space: nowrap;
+  background-image: none; }
+
+/* line 128, ../sass/bootstrap-overrides.scss */
+select.form-control + .chosen-container .chosen-results li:hover,
+select.form-control + .chosen-container .chosen-results li.active-result:hover,
+select.form-control + .chosen-container .chosen-results li.highlighted {
+  color: #FFF;
+  text-decoration: none;
+  background-color: #428BCA;
+  background-image: none; }
+
+/* line 135, ../sass/bootstrap-overrides.scss */
+select.form-control + .chosen-container-multi .chosen-choices {
+  display: block;
+  width: 100%;
+  min-height: 34px;
+  padding: 6px;
+  font-size: 14px;
+  line-height: 1.428571429;
+  color: #555;
+  vertical-align: middle;
+  background-color: #FFF;
+  border: 1px solid #CCC;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  background-image: none; }
+
+/* line 154, ../sass/bootstrap-overrides.scss */
+select.form-control + .chosen-container-multi .chosen-choices li.search-field input[type="text"] {
+  height: auto;
+  padding: 5px 0; }
+
+/* line 159, ../sass/bootstrap-overrides.scss */
+select.form-control + .chosen-container-multi .chosen-choices li.search-choice {
+  background-image: none;
+  padding: 3px 24px 3px 5px;
+  margin: 0 6px 0 0;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.428571429;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  color: #333;
+  background-color: #FFF;
+  border-color: #CCC; }
+
+/* line 178, ../sass/bootstrap-overrides.scss */
+select.form-control + .chosen-container-multi .chosen-choices li.search-choice .search-choice-close {
+  top: 8px;
+  right: 6px; }
+
+/* line 185, ../sass/bootstrap-overrides.scss */
+select.form-control + .chosen-container-multi.chosen-container-active .chosen-choices,
+select.form-control + .chosen-container.chosen-container-single.chosen-container-active .chosen-single,
+select.form-control + .chosen-container .chosen-search input[type=text]:focus {
+  border-color: #66AFE9;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6); }
+
+/* line 192, ../sass/bootstrap-overrides.scss */
+select.form-control + .chosen-container-multi .chosen-results li.result-selected {
+  display: list-item;
+  color: #ccc;
+  cursor: default;
+  background-color: white; }
+
+/* `Form Sign In
+/******************************/
+/* line 202, ../sass/bootstrap-overrides.scss */
+.form-signin {
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto; }
+
+/* line 208, ../sass/bootstrap-overrides.scss */
+.form-signin .form-signin-heading, .form-signin .checkbox {
+  margin-bottom: 10px; }
+
+/* line 212, ../sass/bootstrap-overrides.scss */
+.form-signin .checkbox {
+  font-weight: normal; }
+
+/* line 216, ../sass/bootstrap-overrides.scss */
+.form-signin .form-control {
+  position: relative;
+  font-size: 16px;
+  height: auto;
+  padding: 10px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+/* line 226, ../sass/bootstrap-overrides.scss */
+.form-signin .form-control:focus {
+  z-index: 2; }
+
+/* line 230, ../sass/bootstrap-overrides.scss */
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0; }
+
+/* line 236, ../sass/bootstrap-overrides.scss */
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0; }
+
+/* `Form Registration
+/******************************/
+/* line 245, ../sass/bootstrap-overrides.scss */
+.form-register input.name-field[type="text"] {
+  margin: 0;
+  border-radius: 4px 4px 0 0;
+  border-bottom: 0; }
+
+/* line 251, ../sass/bootstrap-overrides.scss */
+.form-register input.password-field[type="password"], .form-register input[type="email"] {
+  margin: 0;
+  border-radius: 0;
+  border-bottom: 0; }
+
+/**/
+/* line 259, ../sass/bootstrap-overrides.scss */
+.page-header {
+  position: relative; }
+  /* line 262, ../sass/bootstrap-overrides.scss */
+  .page-header .btn {
+    position: absolute;
+    top: 7px;
+    right: 0; }
+
+/* line 279, ../sass/bootstrap-overrides.scss */
+.chosen-container {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 13px;
+  zoom: 1;
+  *display: inline;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none; }
+
+/* line 290, ../sass/bootstrap-overrides.scss */
+.chosen-container .chosen-drop {
+  position: absolute;
+  top: 100%;
+  left: -9999px;
+  z-index: 1010;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  border: 1px solid #aaa;
+  border-top: 0;
+  background: #fff;
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.15); }
+
+/* line 304, ../sass/bootstrap-overrides.scss */
+.chosen-container.chosen-with-drop .chosen-drop {
+  left: 0; }
+
+/* line 307, ../sass/bootstrap-overrides.scss */
+.chosen-container a {
+  cursor: pointer; }
+
+/* line 310, ../sass/bootstrap-overrides.scss */
+.chosen-container-single .chosen-single {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  padding: 0 0 0 8px;
+  height: 23px;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  background-color: #fff;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(20%, white), color-stop(50%, #f6f6f6), color-stop(52%, #eeeeee), color-stop(100%, #f4f4f4));
+  background: -webkit-linear-gradient(top, white 20%, #f6f6f6 50%, #eeeeee 52%, #f4f4f4 100%);
+  background: -moz-linear-gradient(top, white 20%, #f6f6f6 50%, #eeeeee 52%, #f4f4f4 100%);
+  background: -o-linear-gradient(top, white 20%, #f6f6f6 50%, #eeeeee 52%, #f4f4f4 100%);
+  background: linear-gradient(top, #ffffff 20%, #f6f6f6 50%, #eeeeee 52%, #f4f4f4 100%);
+  background-clip: padding-box;
+  box-shadow: 0 0 3px white inset, 0 1px 1px rgba(0, 0, 0, 0.1);
+  color: #444;
+  text-decoration: none;
+  white-space: nowrap;
+  line-height: 24px; }
+
+/* line 331, ../sass/bootstrap-overrides.scss */
+.chosen-container-single .chosen-default {
+  color: #999; }
+
+/* line 334, ../sass/bootstrap-overrides.scss */
+.chosen-container-single .chosen-single span {
+  display: block;
+  overflow: hidden;
+  margin-right: 26px;
+  text-overflow: ellipsis;
+  white-space: nowrap; }
+
+/* line 341, ../sass/bootstrap-overrides.scss */
+.chosen-container-single .chosen-single-with-deselect span {
+  margin-right: 38px; }
+
+/* line 344, ../sass/bootstrap-overrides.scss */
+.chosen-container-single .chosen-single abbr {
+  position: absolute;
+  top: 6px;
+  right: 26px;
+  display: block;
+  width: 12px;
+  height: 12px;
+  background: url("chosen-sprite.png") -42px 1px no-repeat;
+  font-size: 1px; }
+
+/* line 354, ../sass/bootstrap-overrides.scss */
+.chosen-container-single .chosen-single abbr:hover {
+  background-position: -42px -10px; }
+
+/* line 357, ../sass/bootstrap-overrides.scss */
+.chosen-container-single.chosen-disabled .chosen-single abbr:hover {
+  background-position: -42px -10px; }
+
+/* line 360, ../sass/bootstrap-overrides.scss */
+.chosen-container-single .chosen-single div {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: block;
+  width: 18px;
+  height: 100%; }
+
+/* line 367, ../sass/bootstrap-overrides.scss */
+.chosen-container-single .chosen-single div b {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: url("chosen-sprite.png") no-repeat 0px 2px; }
+
+/* line 373, ../sass/bootstrap-overrides.scss */
+.chosen-container-single .chosen-search {
+  position: relative;
+  z-index: 1010;
+  margin: 0;
+  padding: 3px 4px;
+  white-space: nowrap; }
+
+/* line 380, ../sass/bootstrap-overrides.scss */
+.chosen-container-single .chosen-search input[type="text"] {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 1px 0;
+  padding: 4px 20px 4px 5px;
+  width: 100%;
+  height: auto;
+  outline: 0;
+  border: 1px solid #aaa;
+  background: white url("chosen-sprite.png") no-repeat 100% -20px;
+  background: url("chosen-sprite.png") no-repeat 100% -20px, -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(1%, #eeeeee), color-stop(15%, white));
+  background: url("chosen-sprite.png") no-repeat 100% -20px, -webkit-linear-gradient(#eeeeee 1%, white 15%);
+  background: url("chosen-sprite.png") no-repeat 100% -20px, -moz-linear-gradient(#eeeeee 1%, white 15%);
+  background: url("chosen-sprite.png") no-repeat 100% -20px, -o-linear-gradient(#eeeeee 1%, white 15%);
+  background: url("chosen-sprite.png") no-repeat 100% -20px, linear-gradient(#eeeeee 1%, #ffffff 15%);
+  font-size: 1em;
+  font-family: sans-serif;
+  line-height: normal;
+  border-radius: 0; }
+
+/* line 401, ../sass/bootstrap-overrides.scss */
+.chosen-container-single .chosen-drop {
+  margin-top: -1px;
+  border-radius: 0 0 4px 4px;
+  background-clip: padding-box; }
+
+/* line 406, ../sass/bootstrap-overrides.scss */
+.chosen-container-single.chosen-container-single-nosearch .chosen-search {
+  position: absolute;
+  left: -9999px; }
+
+/* line 410, ../sass/bootstrap-overrides.scss */
+.chosen-container .chosen-results {
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: auto;
+  margin: 0 4px 4px 0;
+  padding: 0 0 0 4px;
+  max-height: 240px;
+  -webkit-overflow-scrolling: touch; }
+
+/* line 419, ../sass/bootstrap-overrides.scss */
+.chosen-container .chosen-results li {
+  display: none;
+  margin: 0;
+  padding: 5px 6px;
+  list-style: none;
+  line-height: 15px; }
+
+/* line 426, ../sass/bootstrap-overrides.scss */
+.chosen-container .chosen-results li.active-result {
+  display: list-item;
+  cursor: pointer; }
+
+/* line 430, ../sass/bootstrap-overrides.scss */
+.chosen-container .chosen-results li.disabled-result {
+  display: list-item;
+  color: #ccc;
+  cursor: default; }
+
+/* line 435, ../sass/bootstrap-overrides.scss */
+.chosen-container .chosen-results li.highlighted {
+  background-color: #3875d7;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(20%, #3875d7), color-stop(90%, #2a62bc));
+  background-image: -webkit-linear-gradient(#3875d7 20%, #2a62bc 90%);
+  background-image: -moz-linear-gradient(#3875d7 20%, #2a62bc 90%);
+  background-image: -o-linear-gradient(#3875d7 20%, #2a62bc 90%);
+  background-image: linear-gradient(#3875d7 20%, #2a62bc 90%);
+  color: #fff; }
+
+/* line 444, ../sass/bootstrap-overrides.scss */
+.chosen-container .chosen-results li.no-results {
+  display: list-item;
+  background: #f4f4f4; }
+
+/* line 448, ../sass/bootstrap-overrides.scss */
+.chosen-container .chosen-results li.group-result {
+  display: list-item;
+  font-weight: bold;
+  cursor: default; }
+
+/* line 453, ../sass/bootstrap-overrides.scss */
+.chosen-container .chosen-results li.group-option {
+  padding-left: 15px; }
+
+/* line 456, ../sass/bootstrap-overrides.scss */
+.chosen-container .chosen-results li em {
+  font-style: normal;
+  text-decoration: underline; }
+
+/* line 460, ../sass/bootstrap-overrides.scss */
+.chosen-container-multi .chosen-choices {
+  position: relative;
+  overflow: hidden;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: auto !important;
+  height: 1%;
+  border: 1px solid #aaa;
+  background-color: #fff;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(1%, #eeeeee), color-stop(15%, white));
+  background-image: -webkit-linear-gradient(#eeeeee 1%, white 15%);
+  background-image: -moz-linear-gradient(#eeeeee 1%, white 15%);
+  background-image: -o-linear-gradient(#eeeeee 1%, white 15%);
+  background-image: linear-gradient(#eeeeee 1%, #ffffff 15%);
+  cursor: text; }
+
+/* line 480, ../sass/bootstrap-overrides.scss */
+.chosen-container-multi .chosen-choices li {
+  float: left;
+  list-style: none; }
+
+/* line 484, ../sass/bootstrap-overrides.scss */
+.chosen-container-multi .chosen-choices li.search-field {
+  margin: 0;
+  padding: 0;
+  white-space: nowrap; }
+
+/* line 489, ../sass/bootstrap-overrides.scss */
+.chosen-container-multi .chosen-choices li.search-field input[type="text"] {
+  margin: 1px 0;
+  padding: 5px;
+  height: 15px;
+  outline: 0;
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none;
+  color: #666;
+  font-size: 100%;
+  font-family: sans-serif;
+  line-height: normal;
+  border-radius: 0; }
+
+/* line 503, ../sass/bootstrap-overrides.scss */
+.chosen-container-multi .chosen-choices li.search-field .default {
+  color: #999; }
+
+/* line 506, ../sass/bootstrap-overrides.scss */
+.chosen-container-multi .chosen-choices li.search-choice {
+  position: relative;
+  margin: 3px 0 3px 5px;
+  padding: 3px 20px 3px 5px;
+  border: 1px solid #aaa;
+  border-radius: 3px;
+  background-color: #e4e4e4;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(20%, #f4f4f4), color-stop(50%, #f0f0f0), color-stop(52%, #e8e8e8), color-stop(100%, #eeeeee));
+  background-image: -webkit-linear-gradient(#f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eeeeee 100%);
+  background-image: -moz-linear-gradient(#f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eeeeee 100%);
+  background-image: -o-linear-gradient(#f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eeeeee 100%);
+  background-image: linear-gradient(#f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eeeeee 100%);
+  background-clip: padding-box;
+  box-shadow: 0 0 2px white inset, 0 1px 0 rgba(0, 0, 0, 0.05);
+  color: #333;
+  line-height: 13px;
+  cursor: default; }
+
+/* line 524, ../sass/bootstrap-overrides.scss */
+.chosen-container-multi .chosen-choices li.search-choice .search-choice-close {
+  position: absolute;
+  top: 4px;
+  right: 3px;
+  display: block;
+  width: 12px;
+  height: 12px;
+  background: url("chosen-sprite.png") -42px 1px no-repeat;
+  font-size: 1px; }
+
+/* line 534, ../sass/bootstrap-overrides.scss */
+.chosen-container-multi .chosen-choices li.search-choice .search-choice-close:hover {
+  background-position: -42px -10px; }
+
+/* line 537, ../sass/bootstrap-overrides.scss */
+.chosen-container-multi .chosen-choices li.search-choice-disabled {
+  padding-right: 5px;
+  border: 1px solid #ccc;
+  background-color: #e4e4e4;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(20%, #f4f4f4), color-stop(50%, #f0f0f0), color-stop(52%, #e8e8e8), color-stop(100%, #eeeeee));
+  background-image: -webkit-linear-gradient(top, #f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eeeeee 100%);
+  background-image: -moz-linear-gradient(top, #f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eeeeee 100%);
+  background-image: -o-linear-gradient(top, #f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eeeeee 100%);
+  background-image: linear-gradient(top, #f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eeeeee 100%);
+  color: #666; }
+
+/* line 548, ../sass/bootstrap-overrides.scss */
+.chosen-container-multi .chosen-choices li.search-choice-focus {
+  background: #d4d4d4; }
+
+/* line 551, ../sass/bootstrap-overrides.scss */
+.chosen-container-multi .chosen-choices li.search-choice-focus .search-choice-close {
+  background-position: -42px -10px; }
+
+/* line 554, ../sass/bootstrap-overrides.scss */
+.chosen-container-multi .chosen-results {
+  margin: 0;
+  padding: 0; }
+
+/* line 558, ../sass/bootstrap-overrides.scss */
+.chosen-container-multi .chosen-drop .result-selected {
+  display: list-item;
+  color: #ccc;
+  cursor: default; }
+
+/* line 563, ../sass/bootstrap-overrides.scss */
+.chosen-container-active .chosen-single {
+  border: 1px solid #5897fb;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); }
+
+/* line 567, ../sass/bootstrap-overrides.scss */
+.chosen-container-active.chosen-with-drop .chosen-single {
+  border: 1px solid #aaa;
+  -moz-border-radius-bottomright: 0;
+  border-bottom-right-radius: 0;
+  -moz-border-radius-bottomleft: 0;
+  border-bottom-left-radius: 0;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(20%, #eeeeee), color-stop(80%, white));
+  background-image: -webkit-linear-gradient(#eeeeee 20%, white 80%);
+  background-image: -moz-linear-gradient(#eeeeee 20%, white 80%);
+  background-image: -o-linear-gradient(#eeeeee 20%, white 80%);
+  background-image: linear-gradient(#eeeeee 20%, #ffffff 80%);
+  box-shadow: 0 1px 0 #fff inset; }
+
+/* line 580, ../sass/bootstrap-overrides.scss */
+.chosen-container-active.chosen-with-drop .chosen-single div {
+  border-left: none;
+  background: transparent; }
+
+/* line 584, ../sass/bootstrap-overrides.scss */
+.chosen-container-active.chosen-with-drop .chosen-single div b {
+  background-position: -18px 2px; }
+
+/* line 587, ../sass/bootstrap-overrides.scss */
+.chosen-container-active .chosen-choices {
+  border: 1px solid #5897fb;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); }
+
+/* line 591, ../sass/bootstrap-overrides.scss */
+.chosen-container-active .chosen-choices li.search-field input[type="text"] {
+  color: #111 !important; }
+
+/* line 594, ../sass/bootstrap-overrides.scss */
+.chosen-disabled {
+  opacity: 0.5 !important;
+  cursor: default; }
+
+/* line 598, ../sass/bootstrap-overrides.scss */
+.chosen-disabled .chosen-single {
+  cursor: default; }
+
+/* line 601, ../sass/bootstrap-overrides.scss */
+.chosen-disabled .chosen-choices .search-choice .search-choice-close {
+  cursor: default; }
+
+/* line 604, ../sass/bootstrap-overrides.scss */
+.chosen-rtl {
+  text-align: right; }
+
+/* line 607, ../sass/bootstrap-overrides.scss */
+.chosen-rtl .chosen-single {
+  overflow: visible;
+  padding: 0 8px 0 0; }
+
+/* line 611, ../sass/bootstrap-overrides.scss */
+.chosen-rtl .chosen-single span {
+  margin-right: 0;
+  margin-left: 26px;
+  direction: rtl; }
+
+/* line 616, ../sass/bootstrap-overrides.scss */
+.chosen-rtl .chosen-single-with-deselect span {
+  margin-left: 38px; }
+
+/* line 619, ../sass/bootstrap-overrides.scss */
+.chosen-rtl .chosen-single div {
+  right: auto;
+  left: 3px; }
+
+/* line 623, ../sass/bootstrap-overrides.scss */
+.chosen-rtl .chosen-single abbr {
+  right: auto;
+  left: 26px; }
+
+/* line 627, ../sass/bootstrap-overrides.scss */
+.chosen-rtl .chosen-choices li {
+  float: right; }
+
+/* line 630, ../sass/bootstrap-overrides.scss */
+.chosen-rtl .chosen-choices li.search-field input[type="text"] {
+  direction: rtl; }
+
+/* line 633, ../sass/bootstrap-overrides.scss */
+.chosen-rtl .chosen-choices li.search-choice {
+  margin: 3px 5px 3px 0;
+  padding: 3px 5px 3px 19px; }
+
+/* line 637, ../sass/bootstrap-overrides.scss */
+.chosen-rtl .chosen-choices li.search-choice .search-choice-close {
+  right: auto;
+  left: 4px; }
+
+/* line 641, ../sass/bootstrap-overrides.scss */
+.chosen-rtl.chosen-container-single-nosearch .chosen-search, .chosen-rtl .chosen-drop {
+  left: 9999px; }
+
+/* line 644, ../sass/bootstrap-overrides.scss */
+.chosen-rtl.chosen-container-single .chosen-results {
+  margin: 0 0 4px 4px;
+  padding: 0 4px 0 0; }
+
+/* line 648, ../sass/bootstrap-overrides.scss */
+.chosen-rtl .chosen-results li.group-option {
+  padding-right: 15px;
+  padding-left: 0; }
+
+/* line 652, ../sass/bootstrap-overrides.scss */
+.chosen-rtl.chosen-container-active.chosen-with-drop .chosen-single div {
+  border-right: none; }
+
+/* line 655, ../sass/bootstrap-overrides.scss */
+.chosen-rtl .chosen-search input[type="text"] {
+  padding: 4px 5px 4px 20px;
+  background: white url("chosen-sprite.png") no-repeat -30px -20px;
+  background: url("chosen-sprite.png") no-repeat -30px -20px, -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(1%, #eeeeee), color-stop(15%, white));
+  background: url("chosen-sprite.png") no-repeat -30px -20px, -webkit-linear-gradient(#eeeeee 1%, white 15%);
+  background: url("chosen-sprite.png") no-repeat -30px -20px, -moz-linear-gradient(#eeeeee 1%, white 15%);
+  background: url("chosen-sprite.png") no-repeat -30px -20px, -o-linear-gradient(#eeeeee 1%, white 15%);
+  background: url("chosen-sprite.png") no-repeat -30px -20px, linear-gradient(#eeeeee 1%, #ffffff 15%);
+  direction: rtl; }
+
+/* line 665, ../sass/bootstrap-overrides.scss */
+.chosen-rtl.chosen-container-single .chosen-single div b {
+  background-position: 6px 2px; }
+
+/* line 668, ../sass/bootstrap-overrides.scss */
+.chosen-rtl.chosen-container-single.chosen-with-drop .chosen-single div b {
+  background-position: -12px 2px; }
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-resolution: 144dpi) {
+  /* line 672, ../sass/bootstrap-overrides.scss */
+  .chosen-rtl .chosen-search input[type="text"], .chosen-container-single .chosen-single abbr, .chosen-container-single .chosen-single div b, .chosen-container-single .chosen-search input[type="text"], .chosen-container-multi .chosen-choices .search-choice .search-choice-close, .chosen-container .chosen-results-scroll-down span, .chosen-container .chosen-results-scroll-up span {
+    background-image: url("chosen-sprite@2x.png") !important;
+    background-size: 52px 37px !important;
+    background-repeat: no-repeat !important; } }
+/* line 677, ../sass/bootstrap-overrides.scss */
+.fake {
+  color: red; }
+
+/* line 21, ../sass/application.scss */
 .most-recent {
   clear: both;
   margin: 0 0 40px;
@@ -6341,7 +7062,7 @@ td.visible-print {
   background: #222;
   padding: 20px 0;
   position: relative; }
-  /* line 25, ../sass/application.scss */
+  /* line 29, ../sass/application.scss */
   .most-recent h2 {
     text-align: center;
     font-size: 3em;
@@ -6350,7 +7071,7 @@ td.visible-print {
     margin: 10px 0;
     border-bottom: 10px double #000;
     padding: 0 0 0.5em; }
-  /* line 39, ../sass/application.scss */
+  /* line 43, ../sass/application.scss */
   .most-recent h3 {
     font-weight: 700;
     font-style: italic;
@@ -6363,30 +7084,30 @@ td.visible-print {
     width: 100%;
     margin: 0 auto;
     text-shadow: 0 1px 0 #000,  0 2px 0 #111,  0 3px 0 #222,  0 4px 0 #333,  0 5px 0 #444; }
-  /* line 57, ../sass/application.scss */
+  /* line 61, ../sass/application.scss */
   .most-recent a {
     text-decoration: none;
     color: #efefef; }
-  /* line 62, ../sass/application.scss */
+  /* line 66, ../sass/application.scss */
   .most-recent img {
     margin: 0 0 10px 0;
     float: left;
     width: 100%; }
-  /* line 68, ../sass/application.scss */
+  /* line 72, ../sass/application.scss */
   .most-recent .game {
     padding: 0;
     overflow: hidden;
     clear: both;
     width: 100%; }
 
-/* line 77, ../sass/application.scss */
+/* line 81, ../sass/application.scss */
 .team {
   width: 50%;
   overflow: hidden;
   float: left;
   padding: 5em 0 0 5%;
   margin: 0 0 0 -2.5%; }
-  /* line 86, ../sass/application.scss */
+  /* line 90, ../sass/application.scss */
   .team .player {
     max-width: 50%;
     float: left;
@@ -6394,27 +7115,27 @@ td.visible-print {
     position: relative;
     margin: 0 auto;
     float: none; }
-  /* line 95, ../sass/application.scss */
+  /* line 99, ../sass/application.scss */
   .team img {
     position: relative;
     z-index: 0;
     box-shadow: -1em -1em 2em rgba(0, 0, 0, 0.5); }
-  /* line 102, ../sass/application.scss */
+  /* line 106, ../sass/application.scss */
   .team.doubles {
     margin: 0; }
-    /* line 106, ../sass/application.scss */
+    /* line 110, ../sass/application.scss */
     .team.doubles .player {
       width: 50%;
       max-width: 50%;
       float: left;
       padding: 0; }
-      /* line 112, ../sass/application.scss */
+      /* line 116, ../sass/application.scss */
       .team.doubles .player:first-child {
         margin: -8% -10% 0 0; }
-  /* line 120, ../sass/application.scss */
+  /* line 124, ../sass/application.scss */
   .team:nth-child(n+2) .player img {
     -webkit-filter: grayscale(100%); }
-  /* line 125, ../sass/application.scss */
+  /* line 129, ../sass/application.scss */
   .team .rank {
     display: block;
     background: #FB5703;
@@ -6426,7 +7147,7 @@ td.visible-print {
     position: absolute;
     z-index: 1; }
 
-/* line 138, ../sass/application.scss */
+/* line 142, ../sass/application.scss */
 .versus-text {
   display: block;
   position: absolute;
@@ -6440,7 +7161,7 @@ td.visible-print {
   background: url("/assets/versus.png") no-repeat center center;
   background-size: cover; }
 
-/* line 152, ../sass/application.scss */
+/* line 156, ../sass/application.scss */
 .versus {
   position: absolute;
   width: 100%;
@@ -6449,3 +7170,14 @@ td.visible-print {
   z-index: 1;
   height: 15em;
   width: 10em; }
+
+/* line 168, ../sass/application.scss */
+.recommendations .panel-title {
+  text-align: center;
+  font-size: 26px;
+  font-weight: bold;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
+
+/* line 175, ../sass/application.scss */
+.recommendations a span {
+  margin-left: 10px; }
