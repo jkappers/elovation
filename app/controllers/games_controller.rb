@@ -41,6 +41,8 @@ class GamesController < ApplicationController
   end
 
   def show
+    @recent_results = @game.recent_results
+    @all_ratings = @game.all_ratings
     respond_to do |format|
       format.html
       format.json do

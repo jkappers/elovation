@@ -55,8 +55,8 @@ class Game < ActiveRecord::Base
     ratings.map(&:player)
   end
 
-  def recent_results
-    results.order("created_at DESC").limit(10).includes(:rating_history_events => :rating)
+  def recent_results #offseting 1 to highlight the most recent match
+    results.order("created_at DESC").limit(11).includes(:rating_history_events => :rating) 
   end
 
   def top_ratings
