@@ -1,0 +1,24 @@
+<div class="most-recent">
+	<h2>Most Recently</h2>
+	<div class="game">
+		<% most_recent.teams.each_with_index do |team, index| %>
+			<div class="team<% if team.players.count == 2 %> doubles<% end %>">
+				<% team.players.each do |player| %>
+					<% rating = @all_ratings.detect { |r| r.player_id == player.id } %>
+  				<% rank = @all_ratings.index(rating) %>
+		  			<div class="player">
+			    		<span class="rank"><%= rank + 1 %></span>
+			    		<!-- <span class="rating"><%= rating.value %></span> -->
+			  			<%= image_tag(gravatar_url(player, :size => 250)) %>
+			  			<h3><a href="<%= player_game_path(player, @game) %>"><%= player.name %></a></h3>
+		  			</div>
+				<% end %>
+	  		</div>
+		  	<% if index == 0 %>
+	  		<div class="versus">
+	  			<div class="versus-text">versus</div>
+	  		</div>
+		  	<% end %>
+		<% end %>
+	</div>
+</div>
