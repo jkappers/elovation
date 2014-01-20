@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140117214716) do
+ActiveRecord::Schema.define(:version => 20140117224117) do
 
   create_table "games", :force => true do |t|
     t.string   "name",                           :null => false
@@ -72,10 +72,17 @@ ActiveRecord::Schema.define(:version => 20140117214716) do
     t.datetime "updated_at",          :null => false
     t.float    "trueskill_mean"
     t.float    "trueskill_deviation"
+    t.integer  "team_id"
   end
 
   add_index "ratings", ["game_id"], :name => "index_ratings_on_game_id"
   add_index "ratings", ["player_id"], :name => "index_ratings_on_player_id"
+
+  create_table "result_teams", :force => true do |t|
+    t.integer "result_id"
+    t.integer "team_id"
+    t.integer "rank"
+  end
 
   create_table "results", :force => true do |t|
     t.integer  "game_id",    :null => false

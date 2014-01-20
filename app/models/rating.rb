@@ -1,6 +1,7 @@
 class Rating < ActiveRecord::Base
   belongs_to :game
   belongs_to :player
+  belongs_to :team
   has_many :history_events, :class_name => "RatingHistoryEvent", :dependent => :destroy, :order => "created_at DESC"
 
   def active?
@@ -13,6 +14,7 @@ class Rating < ActiveRecord::Base
 
   def as_json(option = {})
     {
+      :team => team.as_json,
       :player => player.as_json,
       :value => value
     }

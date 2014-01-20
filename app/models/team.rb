@@ -2,7 +2,8 @@ class Team < ActiveRecord::Base
   FIRST_PLACE_RANK = 1
 
   has_and_belongs_to_many :players
-  has_and_belongs_to_many :results
+  has_many :result_teams
+  has_many :results, :through => :result_teams
 
   validates :rank, presence: true
   
