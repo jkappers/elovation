@@ -70,60 +70,68 @@
 		overflow: hidden;
 		clear: both;
 		width: 100%;
-		margin: 0 auto;
 	}
 
+}
+
+.team{
+
+	// Defaults to single player games...
+	width: 50%;
+	overflow: hidden;
+	float: left;
+	padding: 5em 0 0 5%;
+	margin: 0 0 0 -2.5%;
+
 	.player {
-		width: 50%;
+		max-width: 50%;
 		float: left;
 		text-align: center;
 		position: relative;
+		margin: 0 auto;
+		float: none;
+	}
 
-		img{
-			position: relative;
-			z-index: 0;
-			box-shadow: -1em -1em 2em rgba(0, 0, 0, 0.5)
+	img{
+		position: relative;
+		z-index: 0;
+		box-shadow: -1em -1em 2em rgba(0, 0, 0, 0.5);
+	}
+
+	// ...and when the game is a doubles game...
+	&.doubles{
+
+		margin: 0;
+
+		.player{
+			width: 50%;
+			max-width: 50%;
+			float: left;
+			padding: 0;
+
+			&:first-child{
+				margin: -8% -10% 0 0;
+			}
 		}
-
-		&:first-child{
-			margin: -8% -10% 0 0;
-
+	}
+	
+	// Turns the second team, which is the defeated team, grayscale. 
+	&:nth-child(n+2){
+		.player img { 
+			-webkit-filter: grayscale(100%);
 		}
 	}
 
-	.team{
-		width: 50%;
-		overflow: hidden;
-		float: left;
-
-		&.doubles{
-			padding: 5em 0 0 5%;
-
-			img{
-
-				&:first-child{
-					margin: 0 -1% 0 0;
-				}
-			}
-		}
-		
-		&:nth-child(n+2){
-			.player img { 
-				-webkit-filter: grayscale(100%);
-			}
-		}
-
-		.rank {
-			display: block;
-			background: #FB5703;
-			color: #efefef;
-			height: 2em;
-			width: 2em;
-			line-height: 2em;
-			font-weight: bold;
-			position: absolute;
-			z-index: 1;
-		}
+	.rank {
+		display: block;
+		background: #FB5703;
+		color: #efefef;
+		height: 2em;
+		width: 2em;
+		line-height: 2em;
+		font-weight: bold;
+		position: absolute;
+		z-index: 1;
 	}
 }
 

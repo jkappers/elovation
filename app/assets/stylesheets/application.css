@@ -6377,49 +6377,56 @@ td.visible-print {
     padding: 0;
     overflow: hidden;
     clear: both;
-    width: 100%;
-    margin: 0 auto; }
-  /* line 76, ../sass/application.scss */
-  .most-recent .player {
-    width: 50%;
+    width: 100%; }
+
+/* line 77, ../sass/application.scss */
+.team {
+  width: 50%;
+  overflow: hidden;
+  float: left;
+  padding: 5em 0 0 5%;
+  margin: 0 0 0 -2.5%; }
+  /* line 86, ../sass/application.scss */
+  .team .player {
+    max-width: 50%;
     float: left;
     text-align: center;
-    position: relative; }
-    /* line 82, ../sass/application.scss */
-    .most-recent .player img {
-      position: relative;
-      z-index: 0;
-      box-shadow: -1em -1em 2em rgba(0, 0, 0, 0.5); }
-    /* line 88, ../sass/application.scss */
-    .most-recent .player:first-child {
-      margin: -8% -10% 0 0; }
-  /* line 94, ../sass/application.scss */
-  .most-recent .team {
-    width: 50%;
-    overflow: hidden;
-    float: left; }
-    /* line 99, ../sass/application.scss */
-    .most-recent .team.doubles {
-      padding: 5em 0 0 5%; }
-      /* line 104, ../sass/application.scss */
-      .most-recent .team.doubles img:first-child {
-        margin: 0 -1% 0 0; }
-    /* line 111, ../sass/application.scss */
-    .most-recent .team:nth-child(n+2) .player img {
-      -webkit-filter: grayscale(100%); }
-    /* line 116, ../sass/application.scss */
-    .most-recent .team .rank {
-      display: block;
-      background: #FB5703;
-      color: #efefef;
-      height: 2em;
-      width: 2em;
-      line-height: 2em;
-      font-weight: bold;
-      position: absolute;
-      z-index: 1; }
+    position: relative;
+    margin: 0 auto;
+    float: none; }
+  /* line 95, ../sass/application.scss */
+  .team img {
+    position: relative;
+    z-index: 0;
+    box-shadow: -1em -1em 2em rgba(0, 0, 0, 0.5); }
+  /* line 102, ../sass/application.scss */
+  .team.doubles {
+    margin: 0; }
+    /* line 106, ../sass/application.scss */
+    .team.doubles .player {
+      width: 50%;
+      max-width: 50%;
+      float: left;
+      padding: 0; }
+      /* line 112, ../sass/application.scss */
+      .team.doubles .player:first-child {
+        margin: -8% -10% 0 0; }
+  /* line 120, ../sass/application.scss */
+  .team:nth-child(n+2) .player img {
+    -webkit-filter: grayscale(100%); }
+  /* line 125, ../sass/application.scss */
+  .team .rank {
+    display: block;
+    background: #FB5703;
+    color: #efefef;
+    height: 2em;
+    width: 2em;
+    line-height: 2em;
+    font-weight: bold;
+    position: absolute;
+    z-index: 1; }
 
-/* line 130, ../sass/application.scss */
+/* line 138, ../sass/application.scss */
 .versus-text {
   display: block;
   position: absolute;
@@ -6433,7 +6440,7 @@ td.visible-print {
   background: url("/assets/versus.png") no-repeat center center;
   background-size: cover; }
 
-/* line 144, ../sass/application.scss */
+/* line 152, ../sass/application.scss */
 .versus {
   position: absolute;
   width: 100%;
