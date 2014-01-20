@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140117224117) do
+ActiveRecord::Schema.define(:version => 20140120204144) do
 
   create_table "games", :force => true do |t|
     t.string   "name",                           :null => false
@@ -64,7 +64,7 @@ ActiveRecord::Schema.define(:version => 20140117224117) do
   add_index "rating_history_events", ["rating_id"], :name => "index_rating_history_events_on_rating_id"
 
   create_table "ratings", :force => true do |t|
-    t.integer  "player_id",           :null => false
+    t.integer  "player_id"
     t.integer  "game_id",             :null => false
     t.integer  "value",               :null => false
     t.boolean  "pro",                 :null => false

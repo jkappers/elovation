@@ -1,7 +1,7 @@
 <div class="row">
   <div class="col-md-12 col-lg-12">
     <div class="page-header">
-      <h1><%= @player.name %> <small><%= @game.name %> Rating: <%= @player.ratings.find_by_game_id(@game).value %></small></h1>
+      <h1><%= @team.name %> <small><%= @game.name %> Rating: <%= @team.ratings.find_by_game_id(@game).value %></small></h1>
     </div>
   </div>
 </div>
@@ -11,7 +11,7 @@
     <div class="panel panel-default">
       <div class="panel-heading">Recent Activity</div>
       <% if @game.recent_results.any? %>
-        <%= render :partial => 'shared/game_feed', :object => @player.results.for_game(@game).limit(15).order('created_at desc') %>
+        <%= render :partial => 'shared/game_feed', :object => @team.results.for_game(@game).limit(15).order('created_at desc') %>
       <% else %>
         <div class="panel-body">
           No matches have been recorded.
@@ -37,7 +37,7 @@
 <script>
   (function(){
 
-    var chartData = <%= Player.find(params[:player_id]).ratings.where(game_id: 1).first.history_events.limit(10).pluck(:value).reverse %>;
+    var chartData = <%= Team.find(params[:team_id]).ratings.where(game_id: 1).first.history_events.limit(10).pluck(:value).reverse %>;
     function createChart() {
         $("#chart-ten").kendoChart({
             title: {
@@ -93,7 +93,7 @@
 <script>
   (function(){
 
-    var chartData = <%= Player.find(params[:player_id]).ratings.where(game_id: 1).first.history_events.reorder('created_at ASC').pluck(:value) %>;
+    var chartData = <%= Team.find(params[:team_id]).ratings.where(game_id: 1).first.history_events.reorder('created_at ASC').pluck(:value) %>;
     function createChart() {
         $("#chart-all").kendoChart({
             title: {

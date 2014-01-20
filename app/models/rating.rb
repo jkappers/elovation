@@ -21,7 +21,13 @@ class Rating < ActiveRecord::Base
   end
 
   def most_recent_result
-    player.results.for_game(game).most_recent_first.first
+    if player
+      player.results.for_game(game).most_recent_first.first
+    elsif team
+      team.results.for_game(game).most_recent_first.first
+    else
+      nil
+    end
   end
 
   def rewind!

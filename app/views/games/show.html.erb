@@ -13,7 +13,7 @@
 </div>
 
 <div class="row">
-  <div class="col-md-7 col-lg-7">
+  <div class="col-md-4 col-lg-4">
     <div class="panel panel-default">
       <div class="panel-heading">Recent Matches</div>
       <% if @recent_results.any? %>
@@ -25,20 +25,45 @@
       <% end %>
     </div>
   </div>
-  <div class="col-md-5 col-lg-5">
+  <div class="col-md-4 col-lg-4">
     <div class="panel panel-default">
-      <div class="panel-heading">Top Ranked</div>
-      <% if @all_ratings.any? %>
+      <div class="panel-heading">Top Ranked Players</div>
+      <% if @player_ratings.any? %>
         <table class="table">
           <thead>
             <tr>
               <th>#</th>              
               <th>Player</th>
+              <th>Games Played</th>
               <th>Rating</th>                            
             </tr>
           </thead>
           <tbody>
-            <%= render :partial => 'rating', :collection => @all_ratings.select(&:active?) %>
+            <%= render :partial => 'rating', :collection => @player_ratings.select(&:active?) %>
+          </tbody>
+        </table>
+      <% else %>
+        <div class="panel-body">
+          There are no ranked players.
+        </div>        
+      <% end %>
+    </div>    
+  </div>
+  <div class="col-md-4 col-lg-4">
+    <div class="panel panel-default">
+      <div class="panel-heading">Top Ranked Teams</div>
+      <% if @team_ratings.any? %>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>#</th>              
+              <th>Team</th>
+              <th>Games Played</th>
+              <th>Rating</th>                            
+            </tr>
+          </thead>
+          <tbody>
+            <%= render :partial => 'rating', :collection => @team_ratings %>
           </tbody>
         </table>
       <% else %>

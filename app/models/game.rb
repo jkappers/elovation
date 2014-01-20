@@ -38,9 +38,17 @@ class Game < ActiveRecord::Base
   end
 
   validates :allow_ties, inclusion: { in: [true, false], message: "must be selected" }
-
-  def all_ratings
+  
+  def player_ratings
     ratings.joins(:player).order("value DESC")
+  end
+  
+  def team_ratings
+    ratings.joins(:team).order('value DESC')
+  end
+  
+  def all_ratings
+    ratings.order('value DESC')
   end
 
   def as_json(options = {})
@@ -72,7 +80,7 @@ class Game < ActiveRecord::Base
     Rating.where(game_id: self.id).destroy_all
 
     results.order("id ASC").all.each do |result|
-      rater.update_ratings self, result.teams.order("rank ASC")
+      rater.update_ratings self, result.teams.order("rank ASC"), result
     end
   end
 end
