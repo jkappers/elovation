@@ -22,10 +22,6 @@ end
 
 group :test, :development do
   gem 'rake_commit', '0.13.0'
-  gem 'rspec-rails', '2.11.0'
-  gem 'mocha', '0.12.4', :require => false
-  gem 'factory_girl_rails', '4.1.0', :require => false
-  gem 'faker', '1.1.2'
   gem 'heroku', '2.31.4'
   gem 'timecop', '0.5.2'
   gem 'taps', '0.3.24'

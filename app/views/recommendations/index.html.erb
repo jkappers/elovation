@@ -1,0 +1,67 @@
+<div class="recommendations">
+  <div class="row panel panel-danger">
+    <div class="panel-heading">
+      <h2 class="panel-title">Opponents</h2>
+    </div>
+    <div class="panel-body">
+      <div class="col-md-4 col-lg-4">
+        <h3>Never Played Against</h3>
+        <ul class="list-group">
+          <% @never_played_against.each do |player| %>
+          <li class="list-group-item">
+            <%= link_to(image_tag(gravatar_url(player, :size => 40)) + content_tag(:span, player.name), player_game_path(player, @game)) %>
+          </li>
+          <% end %>
+        </ul>
+      </div>
+      <div class="col-md-4 col-lg-4">
+        <h3>Haven't Recently Played Against</h3>
+        <ul class="list-group">
+          <% @not_recently_played_against.each do |player| %>
+          <li class="list-group-item">
+            <%= link_to(image_tag(gravatar_url(player, :size => 40)) + content_tag(:span, player.name), player_game_path(player, @game)) %>
+          </li>
+          <% end %>
+        </ul>
+      </div>
+      <div class="col-md-4 col-lg-4">
+        <h3>Near Your Rating</h3>
+        <ul class="list-group">
+          <% @nearest_rating.each do |player| %>
+          <li class="list-group-item">
+            <%= link_to(image_tag(gravatar_url(player, :size => 40)) + content_tag(:span, player.name), player_game_path(player, @game)) %>
+          </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="row panel panel-success">
+    <div class="panel-heading">
+      <h2 class="panel-title">Teammates</h2>
+    </div>
+    <div class="panel-body">
+      <div class="col-md-6 col-lg-6">
+        <h3>Never Played With</h3>
+        <ul class="list-group">
+          <% @never_played_with.each do |player| %>
+          <li class="list-group-item">
+            <%= link_to(image_tag(gravatar_url(player, :size => 40)) + content_tag(:span, player.name), player_game_path(player, @game)) %>
+          </li>
+          <% end %>
+        </ul>
+      </div>
+      <div class="col-md-6 col-lg-6">
+        <h3>Haven't Recently Played With</h3>
+        <ul class="list-group">
+          <% @not_recently_played_with.each do |player| %>
+          <li class="list-group-item">
+            <%= link_to(image_tag(gravatar_url(player, :size => 40)) + content_tag(:span, player.name), player_game_path(player, @game)) %>
+          </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

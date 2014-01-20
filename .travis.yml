@@ -1,4 +1,9 @@
 language: ruby
 rvm:
-  - 1.9.3
-before_script: rake db:do
+- 1.9.3
+before_script: bundle exec rake db:do
+deploy:
+  provider: heroku
+  app: ke-leaderboard
+  api_key:
+    secure: KVnlKg1mgxThGTBZA/K+q1y1TlYcS+1CpIYIeu9GU7esG+8oQnIET4fubjlZImcHuhJ6YZ+HcWcuUJMUj0/WmHeA+n4QdLS3+c9/UJ4zqkT796ebkS8Xj/8rQRWX0YOevwlZMDBrc2/R9aknA+g8xFIOXp5rkWuBaukdF+EK+F4=

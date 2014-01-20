@@ -40,7 +40,7 @@ class Game < ActiveRecord::Base
   validates :allow_ties, inclusion: { in: [true, false], message: "must be selected" }
 
   def all_ratings
-    ratings.order("value DESC")
+    ratings.joins(:player).order("value DESC")
   end
 
   def as_json(options = {})

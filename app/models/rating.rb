@@ -42,4 +42,8 @@ class Rating < ActiveRecord::Base
   def _previous_rating
     history_events.second
   end
+  
+  def coerce(other)
+    [other, self.value]
+  end
 end
