@@ -13,7 +13,8 @@
       <% if player_signed_in? %>
         <ul class="nav navbar-nav">
           <% if @game %>
-          <li><%= link_to "Recommendations", game_recommendations_path(@game) %></li>
+            <li><%= link_to "Recommendations", game_recommendations_path(@game) %></li>
+            <li><%= link_to "Availability", game_availability_path(@game) %></li>
           <% end %>
           <% if current_player.admin? %>
             <li class="dropdown">
