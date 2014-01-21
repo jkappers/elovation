@@ -18,10 +18,12 @@ class StatusController < WebsocketRails::BaseController
   def set_status(status)    
     if status != "offline"
       if store[key].nil?
+        gravatar_id = Digest::MD5.hexdigest(current_player.email.downcase)
         store[key] = {
               id: current_player.id,
             name: current_player.name,
           status: status,
+          gravatar_url: "http://gravatar.com/avatar/#{gravatar_id}.png?s=40",
           previous_status: nil
         }
       else
