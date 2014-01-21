@@ -6,9 +6,30 @@
 // ---------------------------
 // ---------------------------
 
-@import "compass/reset";
-@import "bootstrap/bootstrap.scss";
-@import "bootstrap-overrides.scss";
+//@import "compass/reset";
+//@import "bootstrap/bootstrap.scss";
+//@import "bootstrap-overrides.scss";
+@import "_pure-io-modifications.scss";
+@import "_typography.scss";
+
+// ---------------------------
+// ---------------------------
+//
+// General Styles (to be organized at a later time)
+//
+// ---------------------------
+// ---------------------------
+
+header{
+	.pure-button{
+		float: right;
+	}
+}
+
+.container{
+	margin: 0 auto;
+}
+
 
 // ---------------------------
 // ---------------------------

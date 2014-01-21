@@ -1,8 +1,12 @@
 
-<div class="page-header">
-  <%= link_to "Record a Match", new_game_result_path(@game), :class => "btn btn-primary" %>  
-  <h1><%= @game.name %></h1>  
-</div>
+<header class="pure-u-1">
+  <div class="pure-g">
+    <h1 class="pure-u-1-2"><%= @game.name %></h1> 
+    <div class="pure-u-1-2">
+      <%= link_to "Record a Game", new_game_result_path(@game), :class => "pure-button pure-button-primary" %>
+    </div>
+  </div>
+</header>
 
 <div class="row">
   <div class="col-md-12 col-lg-12">

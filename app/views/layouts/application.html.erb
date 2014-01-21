@@ -1,20 +1,30 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Leaders</title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">  
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-  <link rel="SHORTCUT ICON" href="<%= image_path "favicon.png" %>" />
-</head>
-<body>
-  <%= render 'banner' %>  
-  <div class="container">
-    <%= yield %>
-  </div>
-</body>
+  <head>
+    <title>Leaderboard</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">  
+    <%= csrf_meta_tags %>
+
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.3.0/pure-min.css">
+    <%= stylesheet_link_tag    "application", :media => "all" %>
+    
+    <link rel="SHORTCUT ICON" href="<%= image_path "favicon.png" %>" />
+  </head>
+  <body>
+    <% # Renders the content in app/views/application/_banner.html.erb %>
+    <%= render 'banner' %>
+    <div class="pure-g-r">
+      <div class="pure-u-5-6 container">
+        <% # This is where all the main content drops in. %>
+        <%= yield %>
+      </div>
+    </div>
+    <% # JavaScript for Typekit %>
+    <script type="text/javascript" src="//use.typekit.net/agh8wav.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+  </body>
 </html>
