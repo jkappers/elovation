@@ -22,6 +22,7 @@ Elovation::Application.routes.draw do
     resources :results, :only => [:create, :destroy, :new]
     resources :ratings, :only => [:index]
     resources :recommendations, only: [:index]
+    get "availability"  	
   end
 
   resources :players do
