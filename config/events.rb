@@ -1,5 +1,5 @@
 WebsocketRails::EventMap.describe do
   namespace :status do
-    subscribe :changed
+    subscribe :changed, "status#changed"
   end
 end
