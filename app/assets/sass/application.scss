@@ -175,3 +175,38 @@
 .recommendations a span{
 	margin-left:10px
 }
+
+// ---------------------------
+// ---------------------------
+//
+// Availability
+//
+// ---------------------------
+// ---------------------------
+
+.status-container {
+	margin: 10px 0;
+	border: solid 1px #ddd;
+	border-left: 0
+}
+
+.status-list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+
+	li {
+		display: block;
+		padding: 7px 10px;
+		border-left: solid 5px #ddd;
+
+		&.status-available {
+			border-left-color: #2ecc71
+		}
+	}
+
+	span {
+		display: inline-block;
+		padding: 0 0 0 10px; 
+	}
+}

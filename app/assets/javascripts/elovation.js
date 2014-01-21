@@ -1,5 +1,25 @@
 $(function(){
 
+	var $availability = $('#availability')
+	var $status = $('#status')
+
+	if (!$availability.length){
+		return;
+	}
+
+function sort_items(){
+	var $items = $availability.children('li').get();
+	$items.sort(function(a, b) {
+		 var $a = $(a), $b = $(b)
+	   return $a.data('statusKey').toUpperCase().localeCompare($b.data('statusKey').toUpperCase());
+	})
+
+	$.each($items, function(idx, itm) { 
+		$availability.append(itm); 
+	});
+}
+
+window.sort_items = sort_items;
 	var dispatcher = new WebSocketRails(location.host + '/websocket')
 		, channel 	 = dispatcher.subscribe('availability')
 		, audio 		 = new Audio('/assets/sf_token.mp3')
@@ -9,9 +29,6 @@ $(function(){
 				offline: 'offline'
 			}
 
-	var $availability = $('#availability')
-	var $status = $('#status')
-
 	$status.on('change', function(){
 		dispatcher.trigger('status.change', { status: $status.val() })
 	})
@@ -19,10 +36,9 @@ $(function(){
 	channel.bind('updated', function(data) {
 		var output = [], play = false
 		for (var status in data) {
-			output.push('<li class="list-group-item">')
-			output.push(data[status].name)
-			output.push(' | ')
-			output.push(data[status].status)
+			output.push('<li data-status-key="'+data[status].status+data[status].name+'" class="status-list-item status-'+ data[status].status + '">')
+			output.push('<img src="' + data[status].gravatar_url + '"/>')
+			output.push('<span>' + data[status].name + '</span>')
 			output.push('</li>')
 
 			if (data[status].status == 'available' && data[status].previous_status != 'available')
@@ -30,9 +46,7 @@ $(function(){
 		}
 
 		$availability.html(output.join(''))
-		if (play){
-			audio.play();
-		}
+		sort_items();
 		console.log(data, $availability, output.join(''))
 	});
 
