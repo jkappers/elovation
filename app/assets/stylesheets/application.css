@@ -1,3 +1,59 @@
+/* line 17, ../../../../../../../.rvm/gems/ruby-1.9.3-p392@ke_leaderboard/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline; }
+
+/* line 22, ../../../../../../../.rvm/gems/ruby-1.9.3-p392@ke_leaderboard/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1; }
+
+/* line 24, ../../../../../../../.rvm/gems/ruby-1.9.3-p392@ke_leaderboard/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none; }
+
+/* line 26, ../../../../../../../.rvm/gems/ruby-1.9.3-p392@ke_leaderboard/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/* line 28, ../../../../../../../.rvm/gems/ruby-1.9.3-p392@ke_leaderboard/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle; }
+
+/* line 30, ../../../../../../../.rvm/gems/ruby-1.9.3-p392@ke_leaderboard/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none; }
+  /* line 103, ../../../../../../../.rvm/gems/ruby-1.9.3-p392@ke_leaderboard/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+  q:before, q:after, blockquote:before, blockquote:after {
+    content: "";
+    content: none; }
+
+/* line 32, ../../../../../../../.rvm/gems/ruby-1.9.3-p392@ke_leaderboard/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none; }
+
+/* line 116, ../../../../../../../.rvm/gems/ruby-1.9.3-p392@ke_leaderboard/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block; }
+
 /* line 4, ../sass/_pure-io-modifications.scss */
 .pure-button-success,
 .pure-button-error,
@@ -55,34 +111,55 @@ h1 {
 
 /* line 29, ../sass/_typography.scss */
 h2 {
-  font-size: 1em; }
+  font-size: 2em;
+  font-weight: 600; }
 
-/* line 23, ../sass/application.scss */
+/* line 32, ../sass/_typography.scss */
+.ampersand {
+  background: #f5c737;
+  display: inline-block;
+  padding: .25em;
+  height: 1em;
+  width: 1em;
+  color: #222;
+  text-align: center; }
+
+/* line 42, ../sass/_typography.scss */
+.defeated {
+  font-style: italic;
+  color: #fff;
+  background: #fb5703;
+  margin: 0 auto;
+  width: 8em;
+  padding: .5em;
+  text-align: center; }
+
+/* line 29, ../sass/application.scss */
 body {
-  background: #F5C737; }
+  background: #f5c737; }
 
-/* line 27, ../sass/application.scss */
+/* line 33, ../sass/application.scss */
 header {
   text-align: center; }
 
-/* line 31, ../sass/application.scss */
+/* line 37, ../sass/application.scss */
 .container {
   margin: 0 auto; }
 
-/* line 44, ../sass/application.scss */
+/* line 50, ../sass/application.scss */
 .most-recent {
   border-top: 10px double #222;
   border-bottom: 10px double #222;
   padding: 1em 0;
   margin: 1em 0;
   position: relative; }
-  /* line 52, ../sass/application.scss */
+  /* line 58, ../sass/application.scss */
   .most-recent h2 {
     text-align: center;
     margin: 10px 0;
     border-bottom: 10px double #000;
     padding: 0 0 0.5em; }
-  /* line 59, ../sass/application.scss */
+  /* line 65, ../sass/application.scss */
   .most-recent h3 {
     position: relative;
     z-index: 0;
@@ -90,27 +167,27 @@ header {
     padding: 0 0 2em 0;
     width: 100%;
     margin: 0 auto; }
-  /* line 68, ../sass/application.scss */
+  /* line 74, ../sass/application.scss */
   .most-recent a {
     text-decoration: none;
-    color: #FB5703; }
-  /* line 73, ../sass/application.scss */
+    color: #fb5703; }
+  /* line 79, ../sass/application.scss */
   .most-recent img {
     margin: 0 0 10px 0;
     float: left;
     width: 100%; }
-  /* line 79, ../sass/application.scss */
+  /* line 85, ../sass/application.scss */
   .most-recent .game {
     padding: 0;
     overflow: hidden;
     clear: both;
     width: 100%; }
 
-/* line 88, ../sass/application.scss */
+/* line 94, ../sass/application.scss */
 .team {
   overflow: hidden;
   float: left; }
-  /* line 94, ../sass/application.scss */
+  /* line 100, ../sass/application.scss */
   .team .player {
     max-width: 50%;
     float: left;
@@ -118,37 +195,37 @@ header {
     position: relative;
     margin: 0 auto;
     float: none; }
-  /* line 103, ../sass/application.scss */
+  /* line 109, ../sass/application.scss */
   .team img {
     position: relative;
     z-index: 0; }
-  /* line 109, ../sass/application.scss */
+  /* line 115, ../sass/application.scss */
   .team.doubles {
     margin: 0; }
-    /* line 113, ../sass/application.scss */
+    /* line 119, ../sass/application.scss */
     .team.doubles .player {
       width: 50%;
       padding: 0; }
-      /* line 117, ../sass/application.scss */
+      /* line 123, ../sass/application.scss */
       .team.doubles .player:first-child {
         margin: -8% -10% 0 0; }
-  /* line 127, ../sass/application.scss */
+  /* line 133, ../sass/application.scss */
   .team:nth-child(n+2) .player:after {
     content: 'defeated';
     font-size: 2em;
     font-style: italic;
     color: #fff;
-    background: #FB5703;
+    background: #fb5703;
     padding: .25em .5em;
     -webkit-transform: rotate(20deg);
     position: absolute;
     top: 20%;
     left: 30%;
     opacity: .75; }
-  /* line 142, ../sass/application.scss */
+  /* line 147, ../sass/application.scss */
   .team:nth-child(n+2) .player img {
     border: 1px solid #FB5703; }
-  /* line 148, ../sass/application.scss */
+  /* line 153, ../sass/application.scss */
   .team .rank {
     display: block;
     background: #FB5703;
@@ -160,37 +237,85 @@ header {
     position: absolute;
     z-index: 1; }
 
-/* line 161, ../sass/application.scss */
+/* line 166, ../sass/application.scss */
 .versus-text {
   display: block;
   position: absolute;
   left: 0;
-  width: 14em;
-  height: 15em;
-  margin-left: -7em;
+  width: 100%;
+  height: 77%;
+  margin-left: -50%;
   text-indent: 140%;
-  overflow: hidden;
   white-space: nowrap;
+  overflow: hidden;
   background: url("/assets/versus.png") no-repeat center center;
   background-size: cover; }
 
-/* line 175, ../sass/application.scss */
+/* line 180, ../sass/application.scss */
 .versus {
   position: absolute;
-  width: 100%;
   left: 50%;
-  top: 0;
-  z-index: 1;
-  height: 15em;
-  width: 10em; }
+  top: 10%;
+  z-index: 2;
+  height: 80%;
+  width: 20%; }
 
-/* line 187, ../sass/application.scss */
+/* line 198, ../sass/application.scss */
+#match-feed {
+  background: #222;
+  color: #fff;
+  padding: 1em; }
+  /* line 203, ../sass/application.scss */
+  #match-feed h2 {
+    text-align: center;
+    margin: 1em 0; }
+  /* line 209, ../sass/application.scss */
+  #match-feed ol {
+    list-style: none;
+    margin: 0;
+    padding: 0; }
+  /* line 215, ../sass/application.scss */
+  #match-feed li {
+    float: left;
+    clear: both;
+    width: 100%; }
+    /* line 221, ../sass/application.scss */
+    #match-feed li:nth-child(odd) {
+      background: #333; }
+  /* line 226, ../sass/application.scss */
+  #match-feed a {
+    font-style: italic;
+    font-weight: 600; }
+  /* line 231, ../sass/application.scss */
+  #match-feed .team {
+    position: relative;
+    z-index: 1;
+    padding: 1em 0;
+    font-size: 1.35em; }
+    /* line 236, ../sass/application.scss */
+    #match-feed .team a {
+      color: #ccc; }
+    /* line 240, ../sass/application.scss */
+    #match-feed .team:nth-child(n+2) {
+      font-size: 1em; }
+      /* line 243, ../sass/application.scss */
+      #match-feed .team:nth-child(n+2) a {
+        color: #777; }
+  /* line 249, ../sass/application.scss */
+  #match-feed .team, #match-feed .defeated-wrap {
+    width: 100%;
+    text-align: center;
+    float: left;
+    margin: .5em 0;
+    height: auto; }
+
+/* line 269, ../sass/application.scss */
 .recommendations .panel-title {
   text-align: center;
   font-size: 26px;
   font-weight: bold;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
 
-/* line 194, ../sass/application.scss */
+/* line 276, ../sass/application.scss */
 .recommendations a span {
   margin-left: 10px; }

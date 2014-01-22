@@ -26,4 +26,25 @@ h1, h2, h3 {
 }
 
 h1 { font-size: 5em; text-align: center; }
-h2 { font-size: 1em;}
+h2 { font-size: 2em; font-weight: 600;}
+
+
+.ampersand{
+	background: $accent;
+	display: inline-block;
+	padding: .25em;
+	height: 1em;
+	width: 1em;
+	color: #222;
+	text-align: center;
+}
+
+.defeated{
+	font-style: italic;
+	color: #fff;
+	background: $accent2;
+	margin: 0 auto;
+	width: 8em;
+	padding: .5em;
+	text-align: center;
+}

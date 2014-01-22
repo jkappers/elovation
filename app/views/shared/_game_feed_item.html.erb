@@ -1,7 +1,12 @@
-<li class="list-group-item">
+<li>
       <% game_feed_item.teams.each_with_index do |team, index| %>
-		<%= raw team.players.map { |player| link_to(player.display_name_for_result(current_player, game_feed_item), player_game_path(player, @game)) }.join(" and ") %>
-        <% if index == 0 %> beat <% end %>
+		<div class="team">
+			<%= raw team.players.map { |player| link_to(player.display_name_for_result(current_player, game_feed_item), player_game_path(player, @game)) }.join(" <span class=\"ampersand\">&amp;</span> ") %>
+        	<% if index == 0 %>
+    	</div>
+    	<div class="defeated-wrap">
+			<span class="defeated">defeated</span>
+		</div>
+        	<% end %>
       <% end %>
-     <%= time_ago_in_words game_feed_item.created_at %> ago
 </li>

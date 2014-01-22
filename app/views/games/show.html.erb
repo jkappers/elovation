@@ -1,50 +1,40 @@
-<header class="pure-u-1">
+<header class="pure-g">
+  <div class="pure-u-1">
     <h1><%= @game.name %></h1>
     <%= link_to "Record a Game", new_game_result_path(@game), :class => "pure-button pure-button-primary" %>
+  </div>
 </header>
 
-<div class="pure-u-1">
-  <div class="pure-g">
+<div class="pure-g">
+  <div class="pure-u-1">
     <% if @recent_results.any? %>
       <%= render :partial => 'shared/most_recent', :object => @recent_results.shift %>
     <% end %>
   </div>
 </div>
 
-<div class="row">
-  <div class="col-md-7 col-lg-7">
-    <div class="panel panel-default">
-      <div class="panel-heading">Recent Matches</div>
+<div class="pure-g">
+  <div class="pure-u-1">
+      <h2>Player Rank</h2>
+      <% if @all_ratings.any? %>
+        <ol>
+         <%= render :partial => 'rating', :collection => @all_ratings.select(&:active?) %>
+        <ol>
+      <% else %>
+        <p>
+          There are no ranked players.
+        </p>        
+      <% end %>
+  </div>
+</div>
+
+<div class="pure-g" id="match-feed">
+  <div class="pure-u-1">
+    <h2>Match Feed</h2>
       <% if @recent_results.any? %>
         <%= render :partial => 'shared/game_feed', :object => @recent_results %>
       <% else %>
-        <div class="panel-body">
-          No matches have been recorded.
-        </div>
+        <p>No matches have been recorded.</p>
       <% end %>
-    </div>
-  </div>
-  <div class="col-md-5 col-lg-5">
-    <div class="panel panel-default">
-      <div class="panel-heading">Top Ranked</div>
-      <% if @all_ratings.any? %>
-        <table class="table">
-          <thead>
-            <tr>
-              <th>#</th>              
-              <th>Player</th>
-              <th>Rating</th>                            
-            </tr>
-          </thead>
-          <tbody>
-            <%= render :partial => 'rating', :collection => @all_ratings.select(&:active?) %>
-          </tbody>
-        </table>
-      <% else %>
-        <div class="panel-body">
-          There are no ranked players.
-        </div>        
-      <% end %>
-    </div>    
   </div>
 </div>
