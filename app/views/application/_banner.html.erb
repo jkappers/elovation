@@ -5,6 +5,10 @@
       <% if current_player.admin? %>
       <li><%= link_to "Games", games_path %></li>
       <% end %>
+       <% if @game %>
+        <li><%= link_to "Recommendations", game_recommendations_path(@game) %></li>
+        <li><%= link_to "Availability", game_availability_path(@game) %></li>
+      <% end %>
       <li><%= link_to current_player.email, edit_player_registration_path %></li>
       <li>
         <%= link_to "Sign out", destroy_player_session_path, method: :delete, class: "pure-button pure-button-warning" %></li>
