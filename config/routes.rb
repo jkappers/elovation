@@ -28,6 +28,10 @@ Elovation::Application.routes.draw do
   resources :players do
     resources :games, :only => [:show], :controller => 'player_games'
   end
+  
+  resources :teams do
+    resources :games, :only => [:show], :controller => 'team_games'
+  end
 
   root :to => 'dashboard#show'
 end

@@ -5,6 +5,7 @@ class ResultsController < ApplicationController
     response = ResultService.create(@game, params[:result])
 
     if response.success?
+      expire_action :controller => '/games', :action => 'show', :id => @game.id
       redirect_to game_path(@game)
     else
       @result = response.result
@@ -22,7 +23,7 @@ class ResultsController < ApplicationController
 
   def new
     @result = Result.new
-    (@game.max_number_of_teams || 20).times{|i| @result.teams.build rank: i}
+    (@game.max_number_of_teams || 20).times{|i| @result.teams.build _rank: i}
   end
 
   def _find_game

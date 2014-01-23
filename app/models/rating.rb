@@ -1,7 +1,8 @@
 class Rating < ActiveRecord::Base
   belongs_to :game
   belongs_to :player
-  has_many :history_events, :class_name => "RatingHistoryEvent", :dependent => :destroy, :order => "created_at DESC"
+  belongs_to :team
+  has_many :history_events, :class_name => "RatingHistoryEvent", :dependent => :destroy, :order => "id DESC"
 
   def active?
     if most_recent_result
@@ -13,13 +14,20 @@ class Rating < ActiveRecord::Base
 
   def as_json(option = {})
     {
+      :team => team.as_json,
       :player => player.as_json,
       :value => value
     }
   end
 
   def most_recent_result
-    player.results.for_game(game).most_recent_first.first
+    if player
+      player.results.for_game(game).most_recent_first.first
+    elsif team
+      team.results.for_game(game).most_recent_first.first
+    else
+      nil
+    end
   end
 
   def rewind!

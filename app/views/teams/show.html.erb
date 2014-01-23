@@ -1,0 +1,7 @@
+<div class="hero-unit">
+  <h1><%= @team.name %></h1>
+  <h2>Games</h2>
+  <% @team.ratings.each do |rating| %>
+    <%= link_to rating.game.name, team_game_path(@team, rating.game) %>
+  <% end %>
+</div>

@@ -10,6 +10,8 @@ class GamesController < ApplicationController
                             :allow_ties ]
 
   before_filter :_find_game, :only => [:destroy, :edit, :show, :update]
+  
+  caches_action :show
 
   def index
     @games = Game.all
@@ -41,7 +43,9 @@ class GamesController < ApplicationController
   end
 
   def show
-    @recent_results = @game.recent_results
+    @recent_results = @game.recent_results.includes(:teams => [:players, :results])
+    @player_ratings = @game.player_ratings.includes(:team => [:players, :results])
+    @team_ratings = @game.team_ratings.includes(:team => [:players, :results])
     @all_ratings = @game.all_ratings
     respond_to do |format|
       format.html

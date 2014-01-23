@@ -14,6 +14,7 @@ gem 'gravtastic'
 gem 'urbanairship'
 gem 'jbuilder', '~> 1.5.3'
 gem 'compass-rails'
+gem 'debugger'
 gem 'thin'
 gem 'websocket-rails'
 
@@ -21,6 +22,11 @@ group :assets do
   gem 'sass-rails',   '~> 3.2.5'
   gem 'coffee-rails', '~> 3.2.2'
   gem 'uglifier', '>= 1.3.0'
+end
+
+group :development do
+  gem "better_errors", "~> 0.9.0"
+  gem "binding_of_caller", "~> 0.7.2"
 end
 
 group :test, :development do

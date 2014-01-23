@@ -4,6 +4,7 @@
     <ul>
       <% if current_player.admin? %>
       <li><%= link_to "Games", games_path %></li>
+
       <% end %>
        <% if @game %>
         <li><%= link_to "Recommendations", game_recommendations_path(@game) %></li>

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div class="pure-g">
   <div class="pure-u-1-2">
     <h1><%= @player.name %></h1>
@@ -31,6 +32,7 @@
       <% end %>
   </div>
 </div>
+<<<<<<< HEAD
 
 
 
@@ -65,35 +67,68 @@
                     majorGridLines: {
                       visible: false
                     },
+=======
+<script>
+  (function(){
 
-                    labels: {
-                        visible: false
-                    },
-                    line: {
-                        visible: false
-                    }
-                },
-                categoryAxis: {
-                    majorGridLines: {
-                      visible: false
-                    },
-                    line: {
-                        visible: false
-                    }                  
-                  },
-                tooltip: {
-                  visible: false
+    var chartData = <%= Player.find(params[:player_id]).ratings.where(game_id: 1).first.history_events.limit(10).pluck(:value).reverse %>;
+    function createChart() {
+        $("#chart-ten").kendoChart({
+            title: {
+              text: 'Rating History (Last 10)'
+            },
+            legend: {
+                visible: false
+            },
+            chartArea: {
+                background: ""
+            },
+            seriesDefaults: {
+                type: "line",
+                style: "smooth"
+            },
+            series: [{
+                data: chartData,
+                labels: {
+                  visible: true
                 }
-            });
-        }
 
-        $(document).ready(createChart);
-      })();
-    </script>
+            }],
+            valueAxis: {
+                majorGridLines: {
+                  visible: false
+                },
+>>>>>>> master
 
-    <script>
-      (function(){
+                labels: {
+                    visible: false
+                },
+                line: {
+                    visible: false
+                }
+            },
+            categoryAxis: {
+                majorGridLines: {
+                  visible: false
+                },
+                line: {
+                    visible: false
+                }                  
+              },
+            tooltip: {
+              visible: false
+            }
+        });
+    }
 
+    $(document).ready(createChart);
+  })();
+</script>
+
+<script>
+  (function(){
+
+<<<<<<< HEAD
         var chartData = <%= Player.find(params[:player_id]).ratings.where(game_id: 1).first.history_events.reorder('created_at ASC').pluck(:value) %>;
         function createChart() {
             $("#chart-all").kendoChart({
@@ -109,38 +144,61 @@
                 seriesDefaults: {
                     type: "line",
                     style: "smooth"
-                },
-                series: [{
-                    data: chartData,
-                    type: 'area'
-                }],
-                valueAxis: {
-                    majorGridLines: {
-                      visible: false
-                    },
-
-                    labels: {
-                        visible: false
-                    },
-                    line: {
-                        visible: false
-                    }
-                },
-                categoryAxis: {
-                    majorGridLines: {
-                      visible: false
-                    },
-                    line: {
-                        visible: false
-                    }                  
-                  },
-                tooltip: {
+=======
+    var chartData = <%= Player.find(params[:player_id]).ratings.where(game_id: 1).first.history_events.reorder('created_at ASC').pluck(:value) %>;
+    function createChart() {
+        $("#chart-all").kendoChart({
+            title: {
+              text: 'Rating History (Complete)'
+            },
+            legend: {
+                visible: false
+            },
+            chartArea: {
+                background: ""
+            },
+            seriesDefaults: {
+                type: "line",
+                style: "smooth"
+            },
+            series: [{
+                data: chartData,
+                type: 'area'
+            }],
+            valueAxis: {
+                majorGridLines: {
                   visible: false
-                }
-            });
-        }
+>>>>>>> master
+                },
 
+                labels: {
+                    visible: false
+                },
+                line: {
+                    visible: false
+                }
+            },
+            categoryAxis: {
+                majorGridLines: {
+                  visible: false
+                },
+                line: {
+                    visible: false
+                }                  
+              },
+            tooltip: {
+              visible: false
+            }
+        });
+    }
+
+<<<<<<< HEAD
         $(document).ready(createChart);
       })();
     </script>
 <% end %>
+=======
+    $(document).ready(createChart);
+  })();
+</script>
+>>>>>>> master
