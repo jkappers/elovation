@@ -36,6 +36,7 @@ This?
     </div>
   </div>
 </div>
+<% content_for :javascript do %>
     <script>
       (function(){
 
@@ -144,6 +145,8 @@ This?
         $(document).ready(createChart);
       })();
     </script>
+<% end %>
+
 <!--
   This isn't really right. It needs to not take into account team games.
   <div class="col-md-4 col-lg-4">
