@@ -60,6 +60,10 @@ class GamesController < ApplicationController
     end
   end
 
+  def availability; 
+    @game = Game.find(params[:game_id])
+  end
+
   def _find_game
     @game = Game.find(params[:id])
   end
