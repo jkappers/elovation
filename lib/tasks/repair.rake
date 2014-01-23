@@ -25,7 +25,9 @@ namespace :repair do
     Team.all.each do |team|
       if team.result_id
         result = Result.find(team.result_id)
-        team.results << result unless team.results.include? result
+        unless ResultTeam.find_by_result_id_and_team_id(result.id, team.id)
+          ResultTeam.create(:result => result, :team => team, :rank => team.rank)
+        end
         print '.'
       end
       team.set_identifier
@@ -40,6 +42,7 @@ namespace :repair do
       teams.each do |team|
         team.results.each do |result|
           unless winner.results.include?(result)
+            puts team.rank
             rt = ResultTeam.new(:result => result, :team => winner, :rank => team.rank)
             rt.save
           end

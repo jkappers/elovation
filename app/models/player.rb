@@ -10,12 +10,6 @@ class Player < ActiveRecord::Base
   scope :active,  ->() { select('distinct players.*').joins(:results).where('results.created_at > ?', 2.weeks.ago)}
   # attr_accessible :title, :body
 
-  has_many :ratings, :order => "value DESC", :dependent => :destroy do
-    def find_or_create(game)
-      where(:game_id => game.id).first || create({game: game, pro: false}.merge(game.rater.default_attributes))
-    end
-  end
-
   has_and_belongs_to_many :teams
 
   has_many :results, through: :teams do
@@ -23,14 +17,6 @@ class Player < ActiveRecord::Base
       joins("INNER JOIN teams AS other_teams ON results.id = other_teams.result_id")
         .joins("INNER JOIN players_teams AS other_players_teams ON other_teams.id = other_players_teams.team_id")
         .where("other_players_teams.player_id = ?", opponent)
-    end
-
-    def losses
-      where("teams.rank > ?", Team::FIRST_PLACE_RANK)
-    end
-
-    def wins
-      where(:teams => {:rank => Team::FIRST_PLACE_RANK})
     end
   end
 
@@ -61,17 +47,14 @@ class Player < ActiveRecord::Base
 		return "You" if current_player && self == current_player
     self.name.split(' ')[0]
 	end
-	def rating_for_game(game)
-	  
-	end
-	
-	def current_rating_for_game(game)
-	  
-	end
+  
+  def ratings
+    Rating.where(team_id: self.teams.select { |t| t.players.length == 1 }.map(&:id))
+  end
 	
 	def display_name_for_result(current_player, result)
 	  _name = display_name(current_player)
-	  rhe = result.rating_history_events.detect { |rhe| rhe.rating.player == self }
+	  rhe = result.rating_history_events.detect { |rhe| rhe.rating.team.players.include? self }
 	  return _name unless rhe
 	  "#{name} (#{rhe.change > 0 ? "+#{rhe.change}" : rhe.change })"
 	end

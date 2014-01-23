@@ -1,15 +1,12 @@
 <tr>
 	<td><%= rating_counter + 1 %></td>
-	
 	<td>
-	  <% if rating.player %>
-      <%= image_tag(gravatar_url(rating.player, :size => 40)) %>
-    	<%= link_to rating.player.name, player_game_path(rating.player, @game) %>
-  	<% else %>
-      <%= link_to rating.team.name, team_game_path(rating.team, @game) %>
-  	<% end %>
+  	<% if rating.team.players.count == 1 %>
+    	<%= image_tag(gravatar_url(rating.team.players.first, :size => 40)) %>
+    <% end %>
+    <%= link_to rating.team.name, team_game_path(rating.team, @game) %>
 	</td>
-	<td><%= rating.player ? rating.player.results.count : rating.team.results.count %></td>
+	<td><%= rating.team.results.count %></td>
 	<td><%= rating.value %></td>
 	
 </tr>

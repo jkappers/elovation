@@ -39,7 +39,7 @@
             </tr>
           </thead>
           <tbody>
-            <%= render :partial => 'rating', :collection => @player_ratings.select(&:active?) %>
+            <%= render :partial => 'rating', :collection => @player_ratings %>
           </tbody>
         </table>
       <% else %>

@@ -92,11 +92,6 @@ ActiveRecord::Schema.define(:version => 20140120204144) do
 
   add_index "results", ["game_id"], :name => "index_results_on_game_id"
 
-  create_table "results_teams", :force => true do |t|
-    t.integer "result_id"
-    t.integer "team_id"
-  end
-
   create_table "teams", :force => true do |t|
     t.integer  "rank"
     t.integer  "result_id"

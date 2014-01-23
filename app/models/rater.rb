@@ -82,7 +82,6 @@ module Rater
     end
 
     def update_ratings game, teams, result
-      _update_player_ratings(game, teams, result)
       _update_team_ratings(game, teams, result)
     end
     
@@ -91,11 +90,10 @@ module Rater
       _agnostic_update_ratings(ratings_to_ranks, result)
     end
     
-    def _update_team_ratings(game, teams, result)
-      if teams.first.players.count > 1      
-        ratings_to_ranks = teams.sort_by(&:rank).each_with_object({}){ |team, hash| hash[[team.ratings.find_or_create(game)]] = team.rank }
-        _agnostic_update_ratings(ratings_to_ranks, result)
-      end
+    def _update_team_ratings(game, teams, result)  
+      puts teams.map(&:_rank)  
+      ratings_to_ranks = teams.sort_by(&:_rank).each_with_object({}){ |team, hash| hash[[team.ratings.find_or_create(game)]] = team._rank }
+      _agnostic_update_ratings(ratings_to_ranks, result)
     end
     
     def _agnostic_update_ratings(ratings_to_ranks, result)
@@ -107,7 +105,6 @@ module Rater
 
         hash[trueskills] = rank
       end
-
       graph = Saulabs::TrueSkill::FactorGraph.new trueskills_to_rank
       graph.update_skills
 
@@ -130,7 +127,7 @@ module Rater
                        trueskill_deviation: trueskill.deviation }
         prev_rating = rating.value
         rating.update_attributes! attributes
-        rating.history_events.create! attributes.merge(:result => result, :change => rating.value - prev_rating)
+        rating.history_events.create! attributes.merge(:result => result, :change => attributes[:value] - prev_rating)
       end
     end
   end

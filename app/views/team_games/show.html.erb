@@ -10,8 +10,8 @@
   <div class="col-md-6 col-lg-6">
     <div class="panel panel-default">
       <div class="panel-heading">Recent Activity</div>
-      <% if @game.recent_results.any? %>
-        <%= render :partial => 'shared/game_feed', :object => @team.results.for_game(@game).limit(15).order('created_at desc') %>
+      <% if @recent_results.any? %>
+        <%= render :partial => 'shared/game_feed', :object => @recent_results %>
       <% else %>
         <div class="panel-body">
           No matches have been recorded.
@@ -37,7 +37,7 @@
 <script>
   (function(){
 
-    var chartData = <%= Team.find(params[:team_id]).ratings.where(game_id: 1).first.history_events.limit(10).pluck(:value).reverse %>;
+    var chartData = <%= @team.ratings.where(game_id: 1).first.history_events.limit(10).pluck(:value).reverse %>;
     function createChart() {
         $("#chart-ten").kendoChart({
             title: {

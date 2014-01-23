@@ -2,7 +2,7 @@ class Rating < ActiveRecord::Base
   belongs_to :game
   belongs_to :player
   belongs_to :team
-  has_many :history_events, :class_name => "RatingHistoryEvent", :dependent => :destroy, :order => "created_at DESC"
+  has_many :history_events, :class_name => "RatingHistoryEvent", :dependent => :destroy, :order => "id DESC"
 
   def active?
     if most_recent_result

@@ -14,7 +14,7 @@ class ResultService
 
     teams.each do |team|
       p_team = Team.find_or_initialize_with_player_ids(team[:players])
-      p_team.rank = team[:rank]
+      p_team._rank = team[:rank]
       result.teams << p_team
     end
 
