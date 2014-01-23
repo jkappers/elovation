@@ -6,7 +6,6 @@
 				<% team.players.each do |player| %>
 					<% rating = @player_ratings.detect { |r| r.team.identifier == player.id.to_s } %>
   				<% rank = @player_ratings.index(rating) %>
-  				<% puts most_recent.rating_history_events %>
   				<% rhe = most_recent.rating_history_events.detect { |rh| rh.rating.team.players.include? player }%>
 		  			<div class="player">
 			    		<span class="rank"><%= rank + 1 %></span>

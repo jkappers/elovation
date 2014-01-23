@@ -5,6 +5,7 @@ class ResultsController < ApplicationController
     response = ResultService.create(@game, params[:result])
 
     if response.success?
+      expire_action :controller => '/games', :action => 'show', :id => @game.id
       redirect_to game_path(@game)
     else
       @result = response.result

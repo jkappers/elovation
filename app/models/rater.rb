@@ -90,8 +90,7 @@ module Rater
       _agnostic_update_ratings(ratings_to_ranks, result)
     end
     
-    def _update_team_ratings(game, teams, result)  
-      puts teams.map(&:_rank)  
+    def _update_team_ratings(game, teams, result)
       ratings_to_ranks = teams.sort_by(&:_rank).each_with_object({}){ |team, hash| hash[[team.ratings.find_or_create(game)]] = team._rank }
       _agnostic_update_ratings(ratings_to_ranks, result)
     end

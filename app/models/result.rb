@@ -33,7 +33,7 @@ class Result < ActiveRecord::Base
       result.errors.add(:teams, "must have at most #{result.game.max_number_of_players_per_team} players per team")
     end
 
-    if !result.game.allow_ties && result.teams.map(&:rank).uniq.size != result.teams.size
+    if !result.game.allow_ties && result.teams.map(&:_rank).uniq.size != result.teams.size
       result.errors.add(:teams, "game does not allow ties")
     end
   end
@@ -43,11 +43,11 @@ class Result < ActiveRecord::Base
   end
 
   def winners
-    teams.select{|team| team.rank == Team::FIRST_PLACE_RANK}.map(&:players).flatten
+    teams.select{|team| team._rank == Team::FIRST_PLACE_RANK}.map(&:players).flatten
   end
 
   def losers
-    teams.select{|team| team.rank != Team::FIRST_PLACE_RANK}.map(&:players).flatten
+    teams.select{|team| team._rank != Team::FIRST_PLACE_RANK}.map(&:players).flatten
   end
 
   def as_json(options = {})

@@ -33,7 +33,7 @@ namespace :repair do
       team.set_identifier
       team.save
     end
-    
+    puts
     
     team_hash = Team.all.group_by(&:identifier)
     puts "Uniqing #{team_hash.count} teams:"
@@ -42,7 +42,6 @@ namespace :repair do
       teams.each do |team|
         team.results.each do |result|
           unless winner.results.include?(result)
-            puts team.rank
             rt = ResultTeam.new(:result => result, :team => winner, :rank => team.rank)
             rt.save
           end

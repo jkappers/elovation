@@ -10,6 +10,8 @@ class GamesController < ApplicationController
                             :allow_ties ]
 
   before_filter :_find_game, :only => [:destroy, :edit, :show, :update]
+  
+  caches_action :show
 
   def index
     @games = Game.all
