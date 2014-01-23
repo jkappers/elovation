@@ -46,6 +46,7 @@ class GamesController < ApplicationController
     @recent_results = @game.recent_results.includes(:teams => [:players, :results])
     @player_ratings = @game.player_ratings.includes(:team => [:players, :results])
     @team_ratings = @game.team_ratings.includes(:team => [:players, :results])
+    @all_ratings = @game.all_ratings
     respond_to do |format|
       format.html
       format.json do
