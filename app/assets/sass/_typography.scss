@@ -25,9 +25,24 @@ h1, h2, h3 {
 	text-transform: uppercase;
 }
 
-h1 { font-size: 5em; text-align: center; }
-h2 { font-size: 2em; font-weight: 600;}
+h1 {
+	font-size: 5em;
+	text-align: center;
+	margin: .5em 0;
+}
 
+h2 {
+	font-size: 2em;
+	font-weight: 600;
+	text-align: center;
+	margin: .5em 0;
+}
+
+ol{
+	a{
+		color: #ccc;
+	}
+}
 
 .ampersand{
 	background: $accent;
@@ -47,4 +62,16 @@ h2 { font-size: 2em; font-weight: 600;}
 	width: 8em;
 	padding: .5em;
 	text-align: center;
+}
+
+.rank {
+	display: block;
+	background: #FB5703;
+	color: #efefef;
+	height: 2em;
+	width: 2em;
+	line-height: 2em;
+	font-weight: bold;
+	position: absolute;
+	z-index: 1;
 }

@@ -107,14 +107,21 @@ h1, h2, h3 {
 /* line 28, ../sass/_typography.scss */
 h1 {
   font-size: 5em;
-  text-align: center; }
+  text-align: center;
+  margin: .5em 0; }
 
-/* line 29, ../sass/_typography.scss */
+/* line 34, ../sass/_typography.scss */
 h2 {
   font-size: 2em;
-  font-weight: 600; }
+  font-weight: 600;
+  text-align: center;
+  margin: .5em 0; }
 
-/* line 32, ../sass/_typography.scss */
+/* line 42, ../sass/_typography.scss */
+ol a {
+  color: #ccc; }
+
+/* line 47, ../sass/_typography.scss */
 .ampersand {
   background: #f5c737;
   display: inline-block;
@@ -124,7 +131,7 @@ h2 {
   color: #222;
   text-align: center; }
 
-/* line 42, ../sass/_typography.scss */
+/* line 57, ../sass/_typography.scss */
 .defeated {
   font-style: italic;
   color: #fff;
@@ -133,6 +140,18 @@ h2 {
   width: 8em;
   padding: .5em;
   text-align: center; }
+
+/* line 67, ../sass/_typography.scss */
+.rank {
+  display: block;
+  background: #FB5703;
+  color: #efefef;
+  height: 2em;
+  width: 2em;
+  line-height: 2em;
+  font-weight: bold;
+  position: absolute;
+  z-index: 1; }
 
 /* line 29, ../sass/application.scss */
 body {
@@ -147,19 +166,59 @@ header {
   margin: 0 auto; }
 
 /* line 50, ../sass/application.scss */
-.most-recent {
-  border-top: 10px double #222;
-  border-bottom: 10px double #222;
-  padding: 1em 0;
-  margin: 1em 0;
-  position: relative; }
+.player {
+  max-width: 50%;
+  text-align: center;
+  position: relative;
+  margin: 0 auto;
+  float: none;
+  overflow: hidden; }
   /* line 58, ../sass/application.scss */
+  .player span {
+    position: absolute;
+    z-index: 2; }
+  /* line 63, ../sass/application.scss */
+  .player .value {
+    left: 1.5em;
+    background: #777;
+    padding: 0 .25em;
+    font-size: .75em;
+    height: 1.5em;
+    line-height: 1.5em;
+    color: #222;
+    font-weight: bold; }
+  /* line 74, ../sass/application.scss */
+  .player .name {
+    font-style: italic;
+    font-weight: bold;
+    text-align: left;
+    bottom: 0;
+    right: 0;
+    font-size: .85em;
+    color: #222;
+    text-decoration: none;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.5); }
+  /* line 87, ../sass/application.scss */
+  .player .rank {
+    height: 1.5em;
+    width: 1.5em;
+    line-height: 1.5em;
+    font-size: .75em; }
+
+/* line 103, ../sass/application.scss */
+.most-recent {
+  background: #222;
+  padding: 4em 0;
+  margin: 1em 0 0 0;
+  position: relative; }
+  /* line 109, ../sass/application.scss */
   .most-recent h2 {
     text-align: center;
     margin: 10px 0;
     border-bottom: 10px double #000;
     padding: 0 0 0.5em; }
-  /* line 65, ../sass/application.scss */
+  /* line 116, ../sass/application.scss */
   .most-recent h3 {
     position: relative;
     z-index: 0;
@@ -167,49 +226,43 @@ header {
     padding: 0 0 2em 0;
     width: 100%;
     margin: 0 auto; }
-  /* line 74, ../sass/application.scss */
+  /* line 125, ../sass/application.scss */
   .most-recent a {
     text-decoration: none;
     color: #fb5703; }
-  /* line 79, ../sass/application.scss */
+  /* line 130, ../sass/application.scss */
   .most-recent img {
-    margin: 0 0 10px 0;
     float: left;
     width: 100%; }
-  /* line 85, ../sass/application.scss */
+  /* line 135, ../sass/application.scss */
   .most-recent .game {
     padding: 0;
     overflow: hidden;
     clear: both;
     width: 100%; }
+  /* line 142, ../sass/application.scss */
+  .most-recent .name {
+    font-size: 2em; }
 
-/* line 94, ../sass/application.scss */
+/* line 148, ../sass/application.scss */
 .team {
   overflow: hidden;
   float: left; }
-  /* line 100, ../sass/application.scss */
-  .team .player {
-    max-width: 50%;
-    float: left;
-    text-align: center;
-    position: relative;
-    margin: 0 auto;
-    float: none; }
-  /* line 109, ../sass/application.scss */
+  /* line 154, ../sass/application.scss */
   .team img {
     position: relative;
     z-index: 0; }
-  /* line 115, ../sass/application.scss */
+  /* line 160, ../sass/application.scss */
   .team.doubles {
     margin: 0; }
-    /* line 119, ../sass/application.scss */
+    /* line 164, ../sass/application.scss */
     .team.doubles .player {
       width: 50%;
       padding: 0; }
-      /* line 123, ../sass/application.scss */
+      /* line 168, ../sass/application.scss */
       .team.doubles .player:first-child {
         margin: -8% -10% 0 0; }
-  /* line 133, ../sass/application.scss */
+  /* line 178, ../sass/application.scss */
   .team:nth-child(n+2) .player:after {
     content: 'defeated';
     font-size: 2em;
@@ -222,22 +275,11 @@ header {
     top: 20%;
     left: 30%;
     opacity: .75; }
-  /* line 147, ../sass/application.scss */
+  /* line 192, ../sass/application.scss */
   .team:nth-child(n+2) .player img {
     border: 1px solid #FB5703; }
-  /* line 153, ../sass/application.scss */
-  .team .rank {
-    display: block;
-    background: #FB5703;
-    color: #efefef;
-    height: 2em;
-    width: 2em;
-    line-height: 2em;
-    font-weight: bold;
-    position: absolute;
-    z-index: 1; }
 
-/* line 166, ../sass/application.scss */
+/* line 199, ../sass/application.scss */
 .versus-text {
   display: block;
   position: absolute;
@@ -251,7 +293,7 @@ header {
   background: url("/assets/versus.png") no-repeat center center;
   background-size: cover; }
 
-/* line 180, ../sass/application.scss */
+/* line 213, ../sass/application.scss */
 .versus {
   position: absolute;
   left: 50%;
@@ -260,48 +302,70 @@ header {
   height: 80%;
   width: 20%; }
 
-/* line 198, ../sass/application.scss */
+/* line 232, ../sass/application.scss */
+#player-rank {
+  color: #222;
+  margin: 0 0 2em 0; }
+  /* line 236, ../sass/application.scss */
+  #player-rank ol {
+    text-align: center; }
+  /* line 240, ../sass/application.scss */
+  #player-rank a {
+    display: block;
+    float: left;
+    width: 100%; }
+  /* line 246, ../sass/application.scss */
+  #player-rank li {
+    display: inline-block;
+    height: auto;
+    width: 10%;
+    background: #222;
+    position: relative;
+    overflow: hidden; }
+    /* line 254, ../sass/application.scss */
+    #player-rank li:hover .name {
+      background: #fb5703;
+      color: #efefef; }
+  /* line 260, ../sass/application.scss */
+  #player-rank img {
+    width: 100%;
+    float: left; }
+
+/* line 275, ../sass/application.scss */
 #match-feed {
   background: #222;
   color: #fff;
   padding: 1em; }
-  /* line 203, ../sass/application.scss */
-  #match-feed h2 {
-    text-align: center;
-    margin: 1em 0; }
-  /* line 209, ../sass/application.scss */
+  /* line 280, ../sass/application.scss */
   #match-feed ol {
     list-style: none;
     margin: 0;
     padding: 0; }
-  /* line 215, ../sass/application.scss */
+  /* line 286, ../sass/application.scss */
   #match-feed li {
     float: left;
     clear: both;
     width: 100%; }
-    /* line 221, ../sass/application.scss */
+    /* line 292, ../sass/application.scss */
     #match-feed li:nth-child(odd) {
       background: #333; }
-  /* line 226, ../sass/application.scss */
+  /* line 297, ../sass/application.scss */
   #match-feed a {
     font-style: italic;
     font-weight: 600; }
-  /* line 231, ../sass/application.scss */
+  /* line 302, ../sass/application.scss */
   #match-feed .team {
     position: relative;
     z-index: 1;
     padding: 1em 0;
     font-size: 1.35em; }
-    /* line 236, ../sass/application.scss */
-    #match-feed .team a {
-      color: #ccc; }
-    /* line 240, ../sass/application.scss */
+    /* line 308, ../sass/application.scss */
     #match-feed .team:nth-child(n+2) {
       font-size: 1em; }
-      /* line 243, ../sass/application.scss */
+      /* line 311, ../sass/application.scss */
       #match-feed .team:nth-child(n+2) a {
         color: #777; }
-  /* line 249, ../sass/application.scss */
+  /* line 317, ../sass/application.scss */
   #match-feed .team, #match-feed .defeated-wrap {
     width: 100%;
     text-align: center;
@@ -309,13 +373,13 @@ header {
     margin: .5em 0;
     height: auto; }
 
-/* line 269, ../sass/application.scss */
+/* line 337, ../sass/application.scss */
 .recommendations .panel-title {
   text-align: center;
   font-size: 26px;
   font-weight: bold;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
 
-/* line 276, ../sass/application.scss */
+/* line 344, ../sass/application.scss */
 .recommendations a span {
   margin-left: 10px; }
