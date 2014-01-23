@@ -14,10 +14,7 @@ class Team < ActiveRecord::Base
   end
   
   before_create :set_identifier
-  
-  def name
-    players.map { |player| player.name.split(/\s/)[0] }.join(' & ')
-  end
+  after_create :set_name
   
   def self.find_or_initialize_with_player_ids(player_ids)
     ident = player_ids.sort { |x,y| x.to_i <=> y.to_i }.join('_')
@@ -26,5 +23,10 @@ class Team < ActiveRecord::Base
   
   def set_identifier
     self.identifier = self.players.sort { |x,y| x.id <=> y.id }.map(&:id).join('_')
+  end
+
+  def set_name
+    self.name = players.map { |player| player.name.split(/\s/)[0] }.join(' & ')
+    save
   end
 end

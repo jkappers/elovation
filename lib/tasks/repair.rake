@@ -52,4 +52,12 @@ namespace :repair do
       print '.'
     end
   end
+
+  desc "Set names on the teams to default values"
+  task :team_names => :environment do
+    Team.where(name: nil).each do |team|
+      team.name = team.players.map { |player| player.name.split(/\s/)[0] }.join(' & ')
+      team.save
+    end
+  end
 end

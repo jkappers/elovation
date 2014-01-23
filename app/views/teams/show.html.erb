@@ -1,27 +1,7 @@
 <div class="hero-unit">
   <h1><%= @team.name %></h1>
-  <div><%= image_tag(gravatar_url(@player, :size => 80)) %></div>
-  <section class="action-buttons">
-    <span><%= link_to 'Edit Player', edit_player_path(@player), :class => "btn btn-primary" %></span>
-    <% if @player.results.empty? %>
-      <span><%= link_to "Delete", player_path(@player), :method => :delete, :confirm => "Are you sure?", :class => "btn btn-danger" %></span>
-    <% end %>
-  </section>
-</div>
-
-<div class="row-fluid">
-  <div class="span8">
-    <h2>Recent Results</h2>
-    <% if @player.recent_results.any? %>
-      <%= render :partial => 'shared/results', :object => @player.recent_results %>
-    <% else %>
-      <span>No results, play some games!</span>
-    <% end %>
-  </div>
-  <div class="span4">
-    <h2>Ratings</h2>
-    <ol>
-      <%= render :partial => 'rating', :collection => @player.ratings %>
-    </ol>
-  </div>
+  <h2>Games</h2>
+  <% @team.ratings.each do |rating| %>
+    <%= link_to rating.game.name, team_game_path(@team, rating.game) %>
+  <% end %>
 </div>
