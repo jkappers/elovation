@@ -154,18 +154,24 @@ ol a {
   z-index: 1; }
 
 /* line 29, ../sass/application.scss */
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+/* line 33, ../sass/application.scss */
 body {
   background: #f5c737; }
 
-/* line 33, ../sass/application.scss */
+/* line 37, ../sass/application.scss */
 header {
   text-align: center; }
 
-/* line 37, ../sass/application.scss */
+/* line 41, ../sass/application.scss */
 .container {
   margin: 0 auto; }
 
-/* line 50, ../sass/application.scss */
+/* line 54, ../sass/application.scss */
 .player {
   max-width: 50%;
   text-align: center;
@@ -173,11 +179,11 @@ header {
   margin: 0 auto;
   float: none;
   overflow: hidden; }
-  /* line 58, ../sass/application.scss */
+  /* line 62, ../sass/application.scss */
   .player span {
     position: absolute;
     z-index: 2; }
-  /* line 63, ../sass/application.scss */
+  /* line 67, ../sass/application.scss */
   .player .value {
     left: 1.5em;
     background: #777;
@@ -187,7 +193,7 @@ header {
     line-height: 1.5em;
     color: #222;
     font-weight: bold; }
-  /* line 74, ../sass/application.scss */
+  /* line 78, ../sass/application.scss */
   .player .name {
     font-style: italic;
     font-weight: bold;
@@ -199,26 +205,26 @@ header {
     text-decoration: none;
     width: 100%;
     background: rgba(255, 255, 255, 0.5); }
-  /* line 87, ../sass/application.scss */
+  /* line 91, ../sass/application.scss */
   .player .rank {
     height: 1.5em;
     width: 1.5em;
     line-height: 1.5em;
     font-size: .75em; }
 
-/* line 103, ../sass/application.scss */
+/* line 107, ../sass/application.scss */
 .most-recent {
   background: #222;
   padding: 4em 0;
   margin: 1em 0 0 0;
   position: relative; }
-  /* line 109, ../sass/application.scss */
+  /* line 113, ../sass/application.scss */
   .most-recent h2 {
     text-align: center;
     margin: 10px 0;
     border-bottom: 10px double #000;
     padding: 0 0 0.5em; }
-  /* line 116, ../sass/application.scss */
+  /* line 120, ../sass/application.scss */
   .most-recent h3 {
     position: relative;
     z-index: 0;
@@ -226,43 +232,43 @@ header {
     padding: 0 0 2em 0;
     width: 100%;
     margin: 0 auto; }
-  /* line 125, ../sass/application.scss */
+  /* line 129, ../sass/application.scss */
   .most-recent a {
     text-decoration: none;
     color: #fb5703; }
-  /* line 130, ../sass/application.scss */
+  /* line 134, ../sass/application.scss */
   .most-recent img {
     float: left;
     width: 100%; }
-  /* line 135, ../sass/application.scss */
+  /* line 139, ../sass/application.scss */
   .most-recent .game {
     padding: 0;
     overflow: hidden;
     clear: both;
     width: 100%; }
-  /* line 142, ../sass/application.scss */
+  /* line 146, ../sass/application.scss */
   .most-recent .name {
     font-size: 2em; }
 
-/* line 148, ../sass/application.scss */
+/* line 152, ../sass/application.scss */
 .team {
   overflow: hidden;
   float: left; }
-  /* line 154, ../sass/application.scss */
+  /* line 158, ../sass/application.scss */
   .team img {
     position: relative;
     z-index: 0; }
-  /* line 160, ../sass/application.scss */
+  /* line 164, ../sass/application.scss */
   .team.doubles {
     margin: 0; }
-    /* line 164, ../sass/application.scss */
+    /* line 168, ../sass/application.scss */
     .team.doubles .player {
       width: 50%;
       padding: 0; }
-      /* line 168, ../sass/application.scss */
+      /* line 172, ../sass/application.scss */
       .team.doubles .player:first-child {
         margin: -8% -10% 0 0; }
-  /* line 178, ../sass/application.scss */
+  /* line 181, ../sass/application.scss */
   .team:nth-child(n+2) .player:after {
     content: 'defeated';
     font-size: 2em;
@@ -275,11 +281,11 @@ header {
     top: 20%;
     left: 30%;
     opacity: .75; }
-  /* line 192, ../sass/application.scss */
+  /* line 195, ../sass/application.scss */
   .team:nth-child(n+2) .player img {
     border: 1px solid #FB5703; }
 
-/* line 199, ../sass/application.scss */
+/* line 202, ../sass/application.scss */
 .versus-text {
   display: block;
   position: absolute;
@@ -293,7 +299,7 @@ header {
   background: url("/assets/versus.png") no-repeat center center;
   background-size: cover; }
 
-/* line 213, ../sass/application.scss */
+/* line 216, ../sass/application.scss */
 .versus {
   position: absolute;
   left: 50%;
@@ -302,70 +308,72 @@ header {
   height: 80%;
   width: 20%; }
 
-/* line 232, ../sass/application.scss */
+/* line 235, ../sass/application.scss */
 #player-rank {
   color: #222;
   margin: 0 0 2em 0; }
-  /* line 236, ../sass/application.scss */
+  /* line 239, ../sass/application.scss */
   #player-rank ol {
     text-align: center; }
-  /* line 240, ../sass/application.scss */
+  /* line 243, ../sass/application.scss */
   #player-rank a {
     display: block;
     float: left;
     width: 100%; }
-  /* line 246, ../sass/application.scss */
+  /* line 249, ../sass/application.scss */
   #player-rank li {
-    display: inline-block;
+    display: block;
     height: auto;
-    width: 10%;
+    width: 100%;
     background: #222;
     position: relative;
-    overflow: hidden; }
-    /* line 254, ../sass/application.scss */
+    overflow: hidden;
+    margin: 0 1em;
+    max-width: 100%; }
+    /* line 259, ../sass/application.scss */
     #player-rank li:hover .name {
       background: #fb5703;
       color: #efefef; }
-  /* line 260, ../sass/application.scss */
+  /* line 265, ../sass/application.scss */
   #player-rank img {
-    width: 100%;
+    width: auto;
     float: left; }
 
-/* line 275, ../sass/application.scss */
+/* line 280, ../sass/application.scss */
 #match-feed {
   background: #222;
   color: #fff;
   padding: 1em; }
-  /* line 280, ../sass/application.scss */
+  /* line 285, ../sass/application.scss */
   #match-feed ol {
     list-style: none;
     margin: 0;
     padding: 0; }
-  /* line 286, ../sass/application.scss */
+  /* line 291, ../sass/application.scss */
   #match-feed li {
     float: left;
     clear: both;
     width: 100%; }
-    /* line 292, ../sass/application.scss */
+    /* line 297, ../sass/application.scss */
     #match-feed li:nth-child(odd) {
       background: #333; }
-  /* line 297, ../sass/application.scss */
+  /* line 302, ../sass/application.scss */
   #match-feed a {
     font-style: italic;
     font-weight: 600; }
-  /* line 302, ../sass/application.scss */
+  /* line 307, ../sass/application.scss */
   #match-feed .team {
     position: relative;
     z-index: 1;
     padding: 1em 0;
     font-size: 1.35em; }
-    /* line 308, ../sass/application.scss */
+    /* line 313, ../sass/application.scss */
     #match-feed .team:nth-child(n+2) {
       font-size: 1em; }
-      /* line 311, ../sass/application.scss */
+      /* line 316, ../sass/application.scss */
       #match-feed .team:nth-child(n+2) a {
         color: #777; }
-  /* line 317, ../sass/application.scss */
+  /* line 322, ../sass/application.scss */
   #match-feed .team, #match-feed .defeated-wrap {
     width: 100%;
     text-align: center;
@@ -373,13 +381,37 @@ header {
     margin: .5em 0;
     height: auto; }
 
-/* line 337, ../sass/application.scss */
+/* line 342, ../sass/application.scss */
 .recommendations .panel-title {
   text-align: center;
   font-size: 26px;
   font-weight: bold;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
 
-/* line 344, ../sass/application.scss */
+/* line 349, ../sass/application.scss */
 .recommendations a span {
   margin-left: 10px; }
+
+/* line 361, ../sass/application.scss */
+.status-container {
+  margin: 10px 0;
+  border: solid 1px #ddd;
+  border-left: 0; }
+
+/* line 367, ../sass/application.scss */
+.status-list {
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+  /* line 372, ../sass/application.scss */
+  .status-list li {
+    display: block;
+    padding: 7px 10px;
+    border-left: solid 5px #ddd; }
+    /* line 377, ../sass/application.scss */
+    .status-list li.status-available {
+      border-left-color: #2ecc71; }
+  /* line 382, ../sass/application.scss */
+  .status-list span {
+    display: inline-block;
+    padding: 0 0 0 10px; }

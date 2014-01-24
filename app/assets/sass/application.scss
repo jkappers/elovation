@@ -26,6 +26,10 @@ $accent2: #FB5703; //orange
 // ---------------------------
 // ---------------------------
 
+*, *:before, *:after {
+  -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+ }
+
 body{
 	background: $accent;
 }
@@ -174,7 +178,6 @@ header{
 	// Turns the second team, which is the defeated team, grayscale. 
 	&:nth-child(n+2){
 		.player{
-
 			&:after{
 				content:'defeated';
 				font-size: 2em;
@@ -244,12 +247,14 @@ header{
 	}
 
 	li{
-		display: inline-block;
+		display: block;
 		height: auto;
-		width: 10%;
+		width: 100%;
 		background: #222;
 		position: relative;
 		overflow: hidden;
+		margin: 0 1em;
+		max-width: 100%;
 
 		&:hover .name{
 			background: $accent2;
@@ -258,7 +263,7 @@ header{
 	}
 
 	img{
-		width: 100%;
+		width: auto;
 		float: left;
 	}
 }
