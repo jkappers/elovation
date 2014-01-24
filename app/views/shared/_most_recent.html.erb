@@ -2,11 +2,20 @@
 	<h2>Most Recently</h2>
 	<div class="game">
 		<% most_recent.teams.each_with_index do |team, index| %>
-			<div class="team<% if team.players.count == 2 %> doubles<% end %>">
+			<% rating, rank = nil, nil %>
+
+			<% if team.players.count > 1 %>
+				<% rating = @team_ratings.detect { |r| r.team.id == team.id } %>
+				<% rank = @team_ratings.index(rating) %>				
+			<% else %>
+				<% rating = @player_ratings.detect { |r| r.team.id == team.id } %>
+				<% rank = @player_ratings.index(rating) %>
+			<% end %>
+
+			<% rhe = most_recent.rating_history_events.detect { |rh| rh.rating.team.id == team.id }%>
+
+			<div class="team <%= 'doubles' if team.players.count > 1 %>">
 				<% team.players.each do |player| %>
-					<% rating = @player_ratings.detect { |r| r.team.identifier == player.id.to_s } %>
-  				<% rank = @player_ratings.index(rating) %>
-  				<% rhe = most_recent.rating_history_events.detect { |rh| rh.rating.team.players.include? player }%>
 		  			<div class="player">
 			    		<span class="rank"><%= rank + 1 %></span>
               <span class="rating"><%= rhe.change > 0 ? "+#{rhe.change}" : rhe.change %></span>
@@ -14,12 +23,16 @@
 			  			<h3><a href="<%= player_game_path(player, @game) %>"><%= player.name %></a></h3>
 		  			</div>
 				<% end %>
-	  		</div>
-		  	<% if index == 0 %>
+			</div>
+
+
+	  	<% if index == 0 %>
 	  		<div class="versus">
 	  			<div class="versus-text">versus</div>
 	  		</div>
-		  	<% end %>
+	  	<% end %>
 		<% end %>
 	</div>
 </div>
+
+

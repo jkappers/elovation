@@ -2,6 +2,9 @@
   <div class="col-md-12 col-lg-12">
     <div class="page-header">
       <h1><%= @team.name %> <small><%= @game.name %> Rating: <%= @team.ratings.find_by_game_id(@game).value %></small></h1>
+      <% if @team.players.length > 1 && @team.players.select{ |p| p.id == current_player.id }.any? %>
+        <%= link_to "Change Name", edit_team_path(@team) %>
+      <% end %>
     </div>
   </div>
 </div>
