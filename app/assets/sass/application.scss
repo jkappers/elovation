@@ -164,13 +164,15 @@ header{
 	&.doubles{
 
 		margin: 0;
+		text-align: center;
 
 		.player{
-			width: 50%;
 			padding: 0;
+			max-width: 30%;
+			display: inline-block;
 
 			&:first-child{
-				margin: -8% -10% 0 0;
+				//margin: -8% -10% 0 0;
 			}
 		}
 	}
@@ -178,6 +180,7 @@ header{
 	// Turns the second team, which is the defeated team, grayscale. 
 	&:nth-child(n+2){
 		.player{
+
 			&:after{
 				content:'defeated';
 				font-size: 2em;
