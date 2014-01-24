@@ -4,6 +4,7 @@
   <h1><%= @game.name %></h1>  
 </div>
 
+<% cache do %>
 <div class="row">
   <div class="col-md-12 col-lg-12">
     <% if @recent_results.any? %>
@@ -74,3 +75,4 @@
     </div>    
   </div>
 </div>
+<% end %>
