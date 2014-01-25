@@ -141,25 +141,25 @@ ol a {
   padding: .5em;
   text-align: center; }
 
-/* line 29, ../sass/application.scss */
+/* line 27, ../sass/application.scss */
 *, *:before, *:after {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box; }
 
-/* line 33, ../sass/application.scss */
+/* line 31, ../sass/application.scss */
 body {
   background: #f5c737; }
 
-/* line 37, ../sass/application.scss */
+/* line 35, ../sass/application.scss */
 header {
   text-align: center; }
 
-/* line 41, ../sass/application.scss */
+/* line 39, ../sass/application.scss */
 .container {
   margin: 0 auto; }
 
-/* line 54, ../sass/application.scss */
+/* line 52, ../sass/application.scss */
 .team {
   max-width: 50%;
   text-align: center;
@@ -167,13 +167,7 @@ header {
   margin: 0 auto;
   float: none;
   overflow: hidden; }
-  /* line 62, ../sass/application.scss */
-  .team .value {
-    background: #efefef;
-    padding: 0 .25em;
-    color: #222;
-    font-weight: bold; }
-  /* line 73, ../sass/application.scss */
+  /* line 60, ../sass/application.scss */
   .team .name {
     font-style: italic;
     font-weight: bold;
@@ -184,49 +178,54 @@ header {
     color: #efefef;
     text-decoration: none;
     width: 100%; }
+  /* line 72, ../sass/application.scss */
+  .team .value, .team .rank {
+    display: inline-block;
+    height: 2em;
+    line-height: 2em;
+    font-weight: bold; }
+  /* line 79, ../sass/application.scss */
+  .team .value {
+    background: #efefef;
+    padding: 0 1em;
+    color: #222; }
+  /* line 85, ../sass/application.scss */
+  .team .rank {
+    background: #FB5703;
+    color: #efefef;
+    width: 2em; }
 
-/* line 87, ../sass/application.scss */
-.rank {
-  display: block;
-  background: #FB5703;
-  color: #efefef;
-  height: 2em;
-  width: 2em;
-  line-height: 2em;
-  font-weight: bold;
-  margin: 1em auto; }
-
-/* line 98, ../sass/application.scss */
+/* line 93, ../sass/application.scss */
 .team-stats {
   position: absolute;
   bottom: 0;
   text-align: center;
   width: 100%; }
 
-/* line 105, ../sass/application.scss */
+/* line 100, ../sass/application.scss */
 .team-info {
   max-width: 85%;
   margin: 0 auto; }
-  /* line 109, ../sass/application.scss */
+  /* line 104, ../sass/application.scss */
   .team-info h4 {
     width: 100%;
     clear: both;
     float: left;
     text-align: center; }
 
-/* line 125, ../sass/application.scss */
+/* line 120, ../sass/application.scss */
 .most-recent {
   background: #222;
   padding: 4em 0;
   margin: 1em 0 0 0;
   position: relative; }
-  /* line 131, ../sass/application.scss */
+  /* line 126, ../sass/application.scss */
   .most-recent h2 {
     text-align: center;
     margin: 10px 0;
     border-bottom: 10px double #000;
     padding: 0 0 0.5em; }
-  /* line 138, ../sass/application.scss */
+  /* line 133, ../sass/application.scss */
   .most-recent h3 {
     position: relative;
     z-index: 0;
@@ -234,42 +233,42 @@ header {
     padding: 0 0 2em 0;
     width: 100%;
     margin: 0 auto; }
-  /* line 147, ../sass/application.scss */
+  /* line 142, ../sass/application.scss */
   .most-recent a {
     text-decoration: none;
     color: #fb5703; }
-  /* line 152, ../sass/application.scss */
+  /* line 147, ../sass/application.scss */
   .most-recent img {
     float: left;
     width: 100%; }
-  /* line 157, ../sass/application.scss */
+  /* line 152, ../sass/application.scss */
   .most-recent .game {
     padding: 0;
     overflow: hidden;
     clear: both;
     width: 100%; }
-  /* line 164, ../sass/application.scss */
+  /* line 159, ../sass/application.scss */
   .most-recent .name {
     font-size: 2em;
     text-align: center;
     margin: .5em 0; }
 
-/* line 172, ../sass/application.scss */
+/* line 167, ../sass/application.scss */
 .team {
   overflow: hidden;
   float: left; }
-  /* line 178, ../sass/application.scss */
+  /* line 173, ../sass/application.scss */
   .team img {
     position: relative;
     z-index: 0; }
-  /* line 183, ../sass/application.scss */
-  .team a {
-    float: left; }
-  /* line 188, ../sass/application.scss */
+  /* line 179, ../sass/application.scss */
   .team.doubles {
     margin: 0;
     text-align: center; }
-  /* line 207, ../sass/application.scss */
+    /* line 184, ../sass/application.scss */
+    .team.doubles a {
+      float: left; }
+  /* line 192, ../sass/application.scss */
   .team:nth-child(n+2):after {
     content: 'defeated';
     font-size: 3em;
@@ -283,7 +282,7 @@ header {
     left: 30%;
     opacity: .75; }
 
-/* line 223, ../sass/application.scss */
+/* line 208, ../sass/application.scss */
 .versus-text {
   display: block;
   position: absolute;
@@ -297,7 +296,7 @@ header {
   background: url("/assets/versus.png") no-repeat center center;
   background-size: cover; }
 
-/* line 237, ../sass/application.scss */
+/* line 222, ../sass/application.scss */
 .versus {
   position: absolute;
   left: 50%;
@@ -306,19 +305,19 @@ header {
   height: 80%;
   width: 20%; }
 
-/* line 256, ../sass/application.scss */
+/* line 241, ../sass/application.scss */
 #player-rank {
   color: #222;
   margin: 0 0 2em 0; }
-  /* line 260, ../sass/application.scss */
+  /* line 245, ../sass/application.scss */
   #player-rank ol {
     text-align: center; }
-  /* line 264, ../sass/application.scss */
+  /* line 249, ../sass/application.scss */
   #player-rank a {
     display: block;
     float: left;
     width: 100%; }
-  /* line 270, ../sass/application.scss */
+  /* line 255, ../sass/application.scss */
   #player-rank li {
     display: block;
     height: auto;
@@ -328,50 +327,50 @@ header {
     overflow: hidden;
     margin: 0 1em;
     max-width: 100%; }
-    /* line 280, ../sass/application.scss */
+    /* line 265, ../sass/application.scss */
     #player-rank li:hover .name {
       background: #fb5703;
       color: #efefef; }
-  /* line 286, ../sass/application.scss */
+  /* line 271, ../sass/application.scss */
   #player-rank img {
     width: auto;
     float: left; }
 
-/* line 301, ../sass/application.scss */
+/* line 286, ../sass/application.scss */
 #match-feed {
   background: #222;
   color: #fff;
   padding: 1em; }
-  /* line 306, ../sass/application.scss */
+  /* line 291, ../sass/application.scss */
   #match-feed ol {
     list-style: none;
     margin: 0;
     padding: 0; }
-  /* line 312, ../sass/application.scss */
+  /* line 297, ../sass/application.scss */
   #match-feed li {
     float: left;
     clear: both;
     width: 100%; }
-    /* line 318, ../sass/application.scss */
+    /* line 303, ../sass/application.scss */
     #match-feed li:nth-child(odd) {
       background: #333; }
-  /* line 323, ../sass/application.scss */
+  /* line 308, ../sass/application.scss */
   #match-feed a {
     font-style: italic;
     font-weight: 600; }
-  /* line 328, ../sass/application.scss */
+  /* line 313, ../sass/application.scss */
   #match-feed .team {
     position: relative;
     z-index: 1;
     padding: 1em 0;
     font-size: 1.35em; }
-    /* line 334, ../sass/application.scss */
+    /* line 319, ../sass/application.scss */
     #match-feed .team:nth-child(n+2) {
       font-size: 1em; }
-      /* line 337, ../sass/application.scss */
+      /* line 322, ../sass/application.scss */
       #match-feed .team:nth-child(n+2) a {
         color: #777; }
-  /* line 343, ../sass/application.scss */
+  /* line 328, ../sass/application.scss */
   #match-feed .team, #match-feed .defeated-wrap {
     width: 100%;
     text-align: center;
@@ -379,37 +378,37 @@ header {
     margin: .5em 0;
     height: auto; }
 
-/* line 363, ../sass/application.scss */
+/* line 348, ../sass/application.scss */
 .recommendations .panel-title {
   text-align: center;
   font-size: 26px;
   font-weight: bold;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
 
-/* line 370, ../sass/application.scss */
+/* line 355, ../sass/application.scss */
 .recommendations a span {
   margin-left: 10px; }
 
-/* line 382, ../sass/application.scss */
+/* line 367, ../sass/application.scss */
 .status-container {
   margin: 10px 0;
   border: solid 1px #ddd;
   border-left: 0; }
 
-/* line 388, ../sass/application.scss */
+/* line 373, ../sass/application.scss */
 .status-list {
   list-style: none;
   margin: 0;
   padding: 0; }
-  /* line 393, ../sass/application.scss */
+  /* line 378, ../sass/application.scss */
   .status-list li {
     display: block;
     padding: 7px 10px;
     border-left: solid 5px #ddd; }
-    /* line 398, ../sass/application.scss */
+    /* line 383, ../sass/application.scss */
     .status-list li.status-available {
       border-left-color: #2ecc71; }
-  /* line 403, ../sass/application.scss */
+  /* line 388, ../sass/application.scss */
   .status-list span {
     display: inline-block;
     padding: 0 0 0 10px; }

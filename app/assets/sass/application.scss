@@ -10,8 +10,6 @@ $accent: #F5C737; //yellow
 $accent2: #FB5703; //orange
 
 @import "compass/reset";
-//@import "bootstrap/bootstrap.scss";
-//@import "bootstrap-overrides.scss";
 @import "_pure-io-modifications.scss";
 @import "_typography.scss";
 
@@ -59,17 +57,6 @@ header{
 	float: none;
 	overflow: hidden;
 
-	.value {
-		background: #efefef;
-		padding: 0 .25em;
-		color: #222;
-		font-weight: bold;
-	}
-
-	.value-change{
-		//color: #aaa;
-	}
-
 	.name{
 		font-style: italic;
 		font-weight: bold;
@@ -81,18 +68,26 @@ header{
 		text-decoration: none;
 		width: 100%;
 	}
-}
 
+	.value, .rank{
+		display: inline-block;
+		height: 2em;
+		line-height: 2em;
+		font-weight: bold;
+	}
 
-.rank {
-	display: block;
-	background: #FB5703;
-	color: #efefef;
-	height: 2em;
-	width: 2em;
-	line-height: 2em;
-	font-weight: bold;
-	margin: 1em auto;
+	.value {
+		background: #efefef;
+		padding: 0 1em;
+		color: #222;
+	}
+
+	.rank {
+		
+		background: #FB5703;
+		color: #efefef;
+		width: 2em;
+	}
 }
 
 .team-stats{
@@ -180,24 +175,14 @@ header{
 		z-index: 0;
 	}
 
-	a{
-		float: left;
-	}
-
 	// ...and when the game is a doubles game...
 	&.doubles{
 
 		margin: 0;
 		text-align: center;
 
-		.player{
-			//padding: 0;
-			//max-width: 30%;
-			//display: inline-block;
-
-			&:first-child{
-				//margin: -8% -10% 0 0;
-			}
+		a{
+			float: left;
 		}
 	}
 	
