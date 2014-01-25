@@ -1,10 +1,9 @@
 
 <div class="page-header">
-  <%= link_to "Record a Match", new_game_result_path(@game), :class => "btn btn-primary" %>  
-  <h1><%= @game.name %></h1>  
+  <%= link_to "Record a Match", new_game_result_path(@game), :class => "btn btn-primary" %>
+  <h1><%= @game.name %></h1>
 </div>
 
-<% cache do %>
 <div class="row">
   <div class="col-md-12 col-lg-12">
     <% if @recent_results.any? %>
@@ -33,9 +32,9 @@
         <table class="table">
           <thead>
             <tr>
-              <th>#</th>              
+              <th>#</th>
               <th>Player</th>
-              <th>Rating</th>                            
+              <th>Rating</th>
             </tr>
           </thead>
           <tbody>
@@ -45,9 +44,9 @@
       <% else %>
         <div class="panel-body">
           There are no ranked players.
-        </div>        
+        </div>
       <% end %>
-    </div>    
+    </div>
   </div>
   <div class="col-md-4 col-lg-4">
     <div class="panel panel-default">
@@ -56,9 +55,9 @@
         <table class="table">
           <thead>
             <tr>
-              <th>#</th>              
+              <th>#</th>
               <th>Team</th>
-              <th>Rating</th>                            
+              <th>Rating</th>
             </tr>
           </thead>
           <tbody>
@@ -68,9 +67,8 @@
       <% else %>
         <div class="panel-body">
           There are no ranked players.
-        </div>        
+        </div>
       <% end %>
-    </div>    
+    </div>
   </div>
 </div>
-<% end %>
