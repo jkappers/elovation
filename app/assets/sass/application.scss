@@ -51,7 +51,7 @@ header{
 // ---------------------------
 // ---------------------------
 
-.player {
+.team {
 	max-width: 50%;
 	text-align: center;
 	position: relative;
@@ -59,20 +59,15 @@ header{
 	float: none;
 	overflow: hidden;
 
-	span{
-		position: absolute;
-		z-index: 2;
-	}
-
-	.value{
-		left: 1.5em;
-		background: #777;
+	.value {
+		background: #efefef;
 		padding: 0 .25em;
-		font-size: .75em;
-		height: 1.5em;
-		line-height: 1.5em;
 		color: #222;
 		font-weight: bold;
+	}
+
+	.value-change{
+		//color: #aaa;
 	}
 
 	.name{
@@ -82,17 +77,40 @@ header{
 		bottom: 0;
 		right: 0;
 		font-size: .85em;
-		color: #222;
+		color: #efefef;
 		text-decoration: none;
 		width: 100%;
-		background: rgba(255,255,255,.5);
 	}
+}
 
-	.rank {
-		height: 1.5em;
-		width: 1.5em;
-		line-height: 1.5em;
-		font-size: .75em;
+
+.rank {
+	display: block;
+	background: #FB5703;
+	color: #efefef;
+	height: 2em;
+	width: 2em;
+	line-height: 2em;
+	font-weight: bold;
+	margin: 1em auto;
+}
+
+.team-stats{
+	position: absolute;
+	bottom: 0;
+	text-align: center;
+	width: 100%;
+}
+
+.team-info{
+	max-width: 85%;
+	margin: 0 auto;
+
+	h4{
+		width: 100%;
+		clear: both;
+		float: left;
+		text-align: center;
 	}
 }
 
@@ -145,6 +163,8 @@ header{
 
 	.name{
 		font-size: 2em;
+		text-align: center;
+		margin: .5em 0;
 	}
 
 }
@@ -160,6 +180,10 @@ header{
 		z-index: 0;
 	}
 
+	a{
+		float: left;
+	}
+
 	// ...and when the game is a doubles game...
 	&.doubles{
 
@@ -167,9 +191,9 @@ header{
 		text-align: center;
 
 		.player{
-			padding: 0;
-			max-width: 30%;
-			display: inline-block;
+			//padding: 0;
+			//max-width: 30%;
+			//display: inline-block;
 
 			&:first-child{
 				//margin: -8% -10% 0 0;
@@ -177,27 +201,21 @@ header{
 		}
 	}
 	
-	// Turns the second team, which is the defeated team, grayscale. 
+	// Styles the 2nd team, the losing team.
+
 	&:nth-child(n+2){
-		.player{
-
-			&:after{
-				content:'defeated';
-				font-size: 2em;
-				font-style: italic;
-				color: #fff;
-				background: $accent2;
-				padding:  .25em .5em;
-				-webkit-transform: rotate(20deg);
-				position: absolute;
-				top: 20%;
-				left: 30%;
-				opacity: .75;
-			}
-
-			img { 
-				border: 1px solid #FB5703;
-			}
+		&:after{ //should definitly be pulled out to be actual content on the page.
+			content:'defeated';
+			font-size: 3em;
+			font-style: italic;
+			color: #fff;
+			background: $accent2;
+			padding:  .25em .5em;
+			-webkit-transform: rotate(20deg);
+			position: absolute;
+			top: 40%;
+			left: 30%;
+			opacity: .75;
 		}
 	}
 }

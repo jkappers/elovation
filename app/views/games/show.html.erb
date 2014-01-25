@@ -25,7 +25,7 @@
       <% if @player_ratings.any? %>
       <h2>Top 10 Players</h2>
         <ol>
-         <%= render :partial => 'rating', :collection => @player_ratings %>
+         <%= render :partial => 'rating', :collection => @player_ratings.limit(4) %>
         </ol>
       <% else %>
         <p>
@@ -37,7 +37,7 @@
         <% if @team_ratings.any? %>
         <h2>Top 10 Teams</h2>
         <ol>
-         <%= render :partial => 'rating', :collection => @team_ratings %>
+         <%= render :partial => 'rating', :collection => @team_ratings.limit(4) %>
         </ol>
       <% else %>
         <p>
