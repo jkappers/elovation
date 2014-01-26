@@ -162,6 +162,24 @@ header{
 		margin: .5em 0;
 	}
 
+	.team{
+		&:nth-child(n+2){
+			&:after{ //should definitly be pulled out to be actual content on the page.
+				content:'defeated';
+				font-size: 3em;
+				font-style: italic;
+				color: #fff;
+				background: $accent2;
+				padding:  .25em .5em;
+				-webkit-transform: rotate(20deg);
+				position: absolute;
+				top: 40%;
+				left: 30%;
+				opacity: .75;
+			}
+		}
+	}
+
 }
 
 .team{
@@ -187,22 +205,6 @@ header{
 	}
 	
 	// Styles the 2nd team, the losing team.
-
-	&:nth-child(n+2){
-		&:after{ //should definitly be pulled out to be actual content on the page.
-			content:'defeated';
-			font-size: 3em;
-			font-style: italic;
-			color: #fff;
-			background: $accent2;
-			padding:  .25em .5em;
-			-webkit-transform: rotate(20deg);
-			position: absolute;
-			top: 40%;
-			left: 30%;
-			opacity: .75;
-		}
-	}
 }
 
 .versus-text{
@@ -315,6 +317,8 @@ header{
 		z-index: 1;
 		padding: 1em 0;
 		font-size: 1.35em;
+		margin: 0.5em auto;
+		float: none;
 
 		&:nth-child(n+2){
 			font-size: 1em;
@@ -328,8 +332,6 @@ header{
 	.team, .defeated-wrap{
 		width: 100%;
 		text-align: center;
-		float: left;
-		margin: .5em 0;
 		height: auto;
 	}
 }
