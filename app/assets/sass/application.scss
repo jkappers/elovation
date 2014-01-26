@@ -81,13 +81,6 @@ header{
 		padding: 0 1em;
 		color: #222;
 	}
-
-	.rank {
-		
-		background: #FB5703;
-		color: #efefef;
-		width: 2em;
-	}
 }
 
 .team-stats{
@@ -240,40 +233,93 @@ header{
 // ---------------------------
 
 
-#player-rank{
-	color: #222;
+#ranking{
+	color: #efefef;
 	margin: 0 0 2em 0;
+
+	.player-image{
+		width: 20%;
+	}
+
+	.player-info{
+		width: 80%;
+	}
+
+	h2{
+		color: #222;
+	}
 
 	ol{
 		text-align: center;
-	}
-
-	a{
-		display: block;
-		float: left;
-		width: 100%;
+		background: #222;
+		padding: 1em;
 	}
 
 	li{
 		display: block;
-		height: auto;
-		width: 100%;
+		height: 5.5em;
 		background: #222;
 		position: relative;
 		overflow: hidden;
-		margin: 0 1em;
-		max-width: 100%;
 
-		&:hover .name{
-			background: $accent2;
-			color: #efefef;
+		&:nth-child(odd){
+			background: #333;
 		}
 	}
 
 	img{
-		width: auto;
+		width: 100%;
 		float: left;
 	}
+
+	a{
+		text-decoration: none;
+		border-bottom: 1px solid;
+	}
+
+	.rank{
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+
+	.name{
+		font-size: 2em;
+		text-transform: capitalize;
+		text-align: center;
+		margin: 0.5em 0;
+	}
+
+	.value{
+		color: #777;
+	}
+
+
+	.team-rank{
+		.player-image{
+			display: none;
+		}
+		.player-info{
+			width: 100%;
+		}
+
+		li{
+			&:nth-child(even){
+				background: #333;
+			}
+			
+			&:nth-child(odd){
+				background: #222;
+			}
+		}
+	}
+}
+
+.rank{		
+	background: #FB5703;
+	color: #efefef;
+	font-size: .75em;
+	padding: .25em .5em;
 }
 
 
@@ -336,27 +382,6 @@ header{
 	}
 }
 
-
-// ---------------------------
-// ---------------------------
-//
-// Recommendations
-//
-// ---------------------------
-// ---------------------------
-
-
-
-.recommendations .panel-title{
-	text-align:center;
-	font-size:26px;
-	font-weight:bold;
-	font-family:"Helvetica Neue", Helvetica, Arial, sans-serif
-}
-
-.recommendations a span{
-	margin-left:10px
-}
 
 // ---------------------------
 // ---------------------------

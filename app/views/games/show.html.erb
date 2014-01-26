@@ -20,12 +20,12 @@
 <div class="pure-g-r">
   <div class="pure-u-5-6 container">
 
-    <div class="pure-g" id="player-rank">
+    <div class="pure-g" id="ranking">
       <div class="pure-u-1-2">
       <% if @player_ratings.any? %>
-      <h2>Top 10 Players</h2>
-        <ol>
-         <%= render :partial => 'rating', :collection => @player_ratings.limit(4) %>
+      <h2>Top Players</h2>
+        <ol class="player-rank">
+         <%= render :partial => 'rating', :collection => @player_ratings.limit(5) %>
         </ol>
       <% else %>
         <p>
@@ -35,9 +35,9 @@
       </div>
       <div class="pure-u-1-2">
         <% if @team_ratings.any? %>
-        <h2>Top 10 Teams</h2>
-        <ol>
-         <%= render :partial => 'rating', :collection => @team_ratings.limit(4) %>
+        <h2>Top Teams</h2>
+        <ol class="team-rank">
+         <%= render :partial => 'rating', :collection => @team_ratings.limit(5) %>
         </ol>
       <% else %>
         <p>
