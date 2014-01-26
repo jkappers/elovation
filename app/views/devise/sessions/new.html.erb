@@ -1,15 +1,26 @@
-<%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: 'form-signin' }) do |f| %>
-  <h2 class="form-signin-heading">Sign in</h2>
-  <%= f.label :email, class: 'sr-only' %>
-  <%= f.email_field :email, class: "form-control", required: "required", placeholder: "Email address", autofocus: true %>
-  <%= f.label :password, class: 'sr-only' %>
-  <%= f.password_field :password, class: "form-control", required: "required", placeholder: "Password" %>
-  <% if devise_mapping.rememberable? -%>
-    <label class="checkbox">
-      <%= f.check_box :remember_me %> Remember me
-    </label>
-  <% end -%>
-  <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-  <br/>
-  <%= link_to "Forgot your password?", new_password_path(resource_name) %>
-<% end %>
+<h1>Sign in</h1>
+
+<div class="pure-g">
+  <div class="pure-u-1">
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <fieldset>
+        <%= f.label :email %>
+        <%= f.email_field :email, required: "required", autofocus: true %>
+      </fieldset>
+      <fieldset>
+        <%= f.label :password %>
+        <%= f.password_field :password, required: "required" %>
+      </fieldset>
+    <% if devise_mapping.rememberable? -%>
+      <fieldset class="inline-fieldset">
+        <%= f.check_box :remember_me %>
+        <%= f.label :'remember me' %>
+      </fieldset>
+    <% end -%>
+      <fieldset class="submit-fieldset">
+        <button class="pure-button pure-button-primary" type="submit">Sign in</button>
+        <%= link_to "Forgot your password?", new_password_path(resource_name) %>
+      </fieldset>
+    <% end %>
+  </div>
+</div>
