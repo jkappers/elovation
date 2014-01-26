@@ -71,21 +71,15 @@ header{
 
 	.value, .rank{
 		display: inline-block;
-		height: 2em;
-		line-height: 2em;
-		font-weight: bold;
 	}
 
 	.value {
 		background: #efefef;
-		padding: 0 1em;
 		color: #222;
 	}
 }
 
 .team-stats{
-	position: absolute;
-	bottom: 0;
 	text-align: center;
 	width: 100%;
 }
@@ -284,10 +278,11 @@ header{
 	}
 
 	.name{
-		font-size: 2em;
+		font-size: 1.5em;
 		text-transform: capitalize;
 		text-align: center;
 		margin: 0.5em 0;
+		font-style: italic;
 	}
 
 	.value{
@@ -320,6 +315,8 @@ header{
 	color: #efefef;
 	font-size: .75em;
 	padding: .25em .5em;
+	float: left;
+	margin: 0 .5em 0 0;
 }
 
 
@@ -355,7 +352,6 @@ header{
 
 	a{
 		font-style: italic;
-		font-weight: 600;
 	}
 
 	.team{
