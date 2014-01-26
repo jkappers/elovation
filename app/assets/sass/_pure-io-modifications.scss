@@ -1,3 +1,11 @@
+// ---------------------------
+// ---------------------------
+//
+// Buttons
+//
+// ---------------------------
+// ---------------------------
+
 .pure-button-success,
 .pure-button-error,
 .pure-button-warning,
@@ -21,4 +29,25 @@
 
 .pure-button-secondary {
     background: rgb(66, 184, 221); /* this is a light blue */
+}
+
+.pure-menu-heading{
+	font-weight: 700;
+	height: auto;
+}
+
+// ---------------------------
+// ---------------------------
+//
+// Floating
+//
+// ---------------------------
+// ---------------------------
+
+.f-left{
+	float: left;
+}
+
+.f-right{
+	float: right;
 }

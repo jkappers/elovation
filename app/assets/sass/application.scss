@@ -437,7 +437,29 @@ form {
 	.submit-fieldset{
 		a {
 			color: #222;
-			
+
 		}
 	}
+}
+
+// ---------------------------
+// ---------------------------
+//
+// Banner
+//
+// ---------------------------
+// ---------------------------
+
+#banner {
+
+	height: auto;
+	background: $accent2;
+	overflow: hidden;
+	clear: both;
+
+	ul {
+		margin: 0 auto;
+		height: auto;
+	}
+
 }

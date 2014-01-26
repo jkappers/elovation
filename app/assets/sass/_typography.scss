@@ -26,9 +26,17 @@ h1, h2, h3 {
 }
 
 h1 {
-	font-size: 5em;
+	font-size: 2em;
 	text-align: center;
 	margin: .5em 0;
+
+	@media (min-width: 400px){
+		font-size: 3.5em;
+	}
+
+	@media (min-width: 700px){
+		font-size: 5em;
+	}
 }
 
 h2 {
@@ -62,4 +70,20 @@ ol{
 	width: 8em;
 	padding: .5em;
 	text-align: center;
+}
+
+#banner{
+	font-family: "botanika-mono-web",sans-serif;
+
+ 	a{
+ 		color: #222;
+ 		font-size: .75em;
+ 		display: inline;
+ 		text-shadow: 1px 1px 0 rgba(255,255,255,.35);
+
+ 		&:hover{
+ 			text-decoration: underline;
+ 			background: transparent;
+ 		}
+ 	}
 }

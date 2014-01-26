@@ -1,18 +1,19 @@
-<div class="pure-menu pure-menu-open pure-menu-horizontal">
-    <%= link_to "Leaderboard", root_path, class: "pure-menu-heading" %>
-    <% if player_signed_in? %>
-    <ul>
-      <% if current_player.admin? %>
-      <li><%= link_to "Games", games_path %></li>
+<div id="banner" class="pure-menu pure-menu-open pure-menu-horizontal">
+<%= link_to "Ping Pong", root_path, class: "pure-menu-heading f-left" %>
 
-      <% end %>
-       <% if @game %>
-        <li><%= link_to "Recommendations", game_recommendations_path(@game) %></li>
-        <li><%= link_to "Availability", game_availability_path(@game) %></li>
-      <% end %>
-      <li><%= link_to current_player.email, edit_player_registration_path %></li>
-      <li>
-        <%= link_to "Sign out", destroy_player_session_path, method: :delete, class: "pure-button pure-button-warning" %></li>
-    </ul>
-  <% end %>
+<% if player_signed_in? %>
+  <ul class="f-left">
+    <% if current_player.admin? %>
+    <li><%= link_to "Games", games_path %></li>
+    <% end %>
+     <% if @game %>
+      <li><%= link_to "change availability", game_availability_path(@game) %></li>
+    <% end %>
+  </ul>
+  <ul class="f-right">
+    <li><%= link_to current_player.email, edit_player_registration_path %></li>
+    <li>
+      <%= link_to "sign out", destroy_player_session_path, method: :delete, class: "pure-link-warning" %></li>
+  </ul>
+<% end %>
 </div>
