@@ -29,4 +29,9 @@ class Team < ActiveRecord::Base
     self.name = players.map { |player| player.name.split(/\s/)[0] }.join(' & ')
     save
   end
+  
+  def rewind_rating!(game)
+    rating = ratings.where(:game_id => game.id).first
+    rating.rewind!
+  end
 end
