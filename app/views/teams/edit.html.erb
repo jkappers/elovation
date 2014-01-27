@@ -1,6 +1,15 @@
-<div class="hero-unit">
-  <%= form_for @team do |f| %>
-    <%= f.text_field :name %>
-    <%= f.submit %>
-  <% end %>
+<h1>Change team name</h1>
+
+<div class="pure-g">
+	<div class="pure-u-1">
+		<%= form_for @team do |f| %>
+		<fieldset>
+			<%= f.label :name %>
+		  	<%= f.text_field :name %>
+		</fieldset>
+		<fieldset class="fieldset-submit">
+			<%= f.submit :class => "pure-button pure-button-primary" %>
+		</fieldset>
+		<% end %>
+	</div>
 </div>

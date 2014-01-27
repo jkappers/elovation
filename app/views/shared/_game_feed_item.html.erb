@@ -1,7 +1,13 @@
-<li class="list-group-item">
-  <% game_feed_item.teams.order('result_teams.rank asc').each_with_index do |team, index| %>
-  <%= link_to(team_name_for_result(team, game_feed_item), team_game_path(team, @game)) %>
-    <% if index == 0 %> beat <% end %>
-  <% end %>
-   <%= time_ago_in_words game_feed_item.created_at %> ago
+
+<li>
+      <% game_feed_item.teams.order('result_teams.rank asc').each_with_index do |team, index| %>
+		<div class="team">
+			<%= link_to(team_name_for_result(team, game_feed_item), team_game_path(team, @game)) %>
+        	<% if index == 0 %>
+    	</div>
+    	<div class="defeated-wrap">
+			<span class="defeated">defeated</span>
+		</div>
+        	<% end %>
+      <% end %>
 </li>

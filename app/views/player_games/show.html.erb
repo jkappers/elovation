@@ -1,39 +1,73 @@
-<div class="row">
-  <div class="col-md-12 col-lg-12">
-    <div class="page-header">
-      <h1><%= @player.name %> <small><%= @game.name %> Rating: <%= @player.ratings.find_by_game_id(@game).value %></small></h1>
+<<<<<<< HEAD
+<div class="pure-g">
+  <div class="pure-u-1-2">
+    <h1><%= @player.name %></h1>
+    <h2><%= @game.name %> Rating: <%= @player.ratings.find_by_game_id(@game).value %></h2>
+  </div>
+  <div class="pure-u-1-2">
+    <%= image_tag(gravatar_url(@player, :size => 250)) %>
+  </div>
+</div>
+
+<div class="pure-g">
+  <div class="pure-u-1-2">
+    <div class="chart-wrapper">
+      <div id="chart-ten" style="height:200px"></div>
+    </div>
+  </div>
+  <div class="pure-u-1-2">
+    <div class="chart-wrapper">
+      <div id="chart-all" style="height:200px"></div>
     </div>
   </div>
 </div>
 
-<div class="row">
-  <div class="col-md-6 col-lg-6">
-    <div class="panel panel-default">
-      <div class="panel-heading">Recent Activity</div>
+<div class="pure-g" id="match-feed">
+  <div class="pure-u-1">
+    <h2>Match Feed</h2>
       <% if @game.recent_results.any? %>
         <%= render :partial => 'shared/game_feed', :object => @player.results.for_game(@game).limit(15).order('created_at desc') %>
       <% else %>
-        <div class="panel-body">
-          No matches have been recorded.
-        </div>
+        <p>No matches have been recorded.</p>
       <% end %>
-    </div>
-  </div>
-  <div class="col-md-6 col-lg-6">
-    <div class="row">
-      <div class="col-md-12 col-lg-12">
-        <div class="chart-wrapper">
-          <div id="chart-ten" style="height:200px"></div>
-        </div>
-      </div>
-      <div class="col-md-12 col-lg-12">
-        <div class="chart-wrapper">
-          <div id="chart-all" style="height:200px"></div>
-        </div>
-      </div>      
-    </div>
   </div>
 </div>
+<<<<<<< HEAD
+
+
+
+<% content_for :javascript do %>
+    <script>
+      (function(){
+
+        var chartData = <%= Player.find(params[:player_id]).ratings.where(game_id: 1).first.history_events.limit(10).pluck(:value).reverse %>;
+        function createChart() {
+            $("#chart-ten").kendoChart({
+                title: {
+                  text: 'Recent History'
+                },
+                legend: {
+                    visible: false
+                },
+                chartArea: {
+                    background: ""
+                },
+                seriesDefaults: {
+                    type: "line",
+                    style: "smooth"
+                },
+                 series: [{
+                    data: chartData,
+                    type: 'area',
+                    labels: {
+                      visible: true
+                    }
+                }],
+                valueAxis: {
+                    majorGridLines: {
+                      visible: false
+                    },
+=======
 <script>
   (function(){
 
@@ -64,6 +98,7 @@
                 majorGridLines: {
                   visible: false
                 },
+>>>>>>> master
 
                 labels: {
                     visible: false
@@ -93,6 +128,23 @@
 <script>
   (function(){
 
+<<<<<<< HEAD
+        var chartData = <%= Player.find(params[:player_id]).ratings.where(game_id: 1).first.history_events.reorder('created_at ASC').pluck(:value) %>;
+        function createChart() {
+            $("#chart-all").kendoChart({
+                title: {
+                  text: 'Complete History'
+                },
+                legend: {
+                    visible: false
+                },
+                chartArea: {
+                    background: ""
+                },
+                seriesDefaults: {
+                    type: "line",
+                    style: "smooth"
+=======
     var chartData = <%= Player.find(params[:player_id]).ratings.where(game_id: 1).first.history_events.reorder('created_at ASC').pluck(:value) %>;
     function createChart() {
         $("#chart-all").kendoChart({
@@ -116,6 +168,7 @@
             valueAxis: {
                 majorGridLines: {
                   visible: false
+>>>>>>> master
                 },
 
                 labels: {
@@ -139,6 +192,13 @@
         });
     }
 
+<<<<<<< HEAD
+        $(document).ready(createChart);
+      })();
+    </script>
+<% end %>
+=======
     $(document).ready(createChart);
   })();
 </script>
+>>>>>>> master

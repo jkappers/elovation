@@ -1,32 +1,31 @@
-<%= form_for [@game, @result], html: { class: 'form-horizontal' } do |f| %>
-  <%= f.error_messages %>
+<div class="pure-g">
+  <div class="pure-u-1">
+    <h1>Mark your victory</h1>
+    <%= form_for [@game, @result], html: { id: 'victory' } do |f| %>
+    
+      <%= f.error_messages %>
 
-  <div class="row">
-  <% @result.teams.each.with_index do |team, index| %>
-    <div class="panel panel-default">
-      <div class="panel-heading">Team <%= index + 1 %></div>
-      <div class="panel-body">
-        <div class="form-group">
-          <div class="col-md-12">
-            <%= select "result[teams][#{index}]", "players", player_options, {:include_blank => ''}, :class => "players form-control", :multiple => @game.max_number_of_players_per_team != 1, "data-placeholder" => "Players in team #{index + 1}..." %>
-          </div>
+      <% @result.teams.each.with_index do |team, index| %>
+        <div class="pure-u-1-2">
+          <h2>Team <%= index + 1 %></h2>
+          <%= select "result[teams][#{index}]", "players", player_options, {:include_blank => ''}, :class => "players", :multiple => @game.max_number_of_players_per_team != 1, "data-placeholder" => "Players in team #{index + 1}..." %>
+          
+          <% if index != @result.teams.size - 1 %>
+            <%= select "result[teams][#{index}]", :relation, [["defeated team #{index + 2}", "defeats"], ["ties with team #{index + 2}", "ties"]], {} %>
+          <% end %>
         </div>
-        <% if index != @result.teams.size - 1 %>
-          <div class="form-group">
-            <div class="col-md-12">
-              <%= select "result[teams][#{index}]", :relation, [["defeated team #{index + 2}", "defeats"], ["ties with team #{index + 2}", "ties"]], {}, :class => "form-control" %>
-            </div>
-          </div>        
-        <% end %>
-      </div>
-    </div>
+      <% end %>
+
+      <fieldset class="submit-fieldset class pure-u-1">
+        <%= f.submit :class => "pure-button pure-button-primary" %>
+      </fieldset>
+
+    <% end %>
+  </div>
+</div>
+
+<% content_for :javascript do %>
+  <%= javascript_tag do %>
+    $(".players").chosen();
   <% end %>
-
-  <p>
-    <%= f.submit :class => "btn btn-primary" %>
-  </p>
-<% end %>
-
-<%= javascript_tag do %>
-  $(".players").chosen();
 <% end %>
