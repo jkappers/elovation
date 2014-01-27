@@ -511,3 +511,13 @@ form {
   #banner ul {
     margin: 0 auto;
     height: auto; }
+
+/* line 502, ../sass/application.scss */
+#victory {
+  width: 100%; }
+  /* line 506, ../sass/application.scss */
+  #victory .pure-u-1-2 {
+    float: left; }
+  /* line 510, ../sass/application.scss */
+  #victory select {
+    width: 100%; }
