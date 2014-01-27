@@ -7,7 +7,7 @@ module ApplicationHelper
   end
   
   def team_name_for_result(team, result)
-    rhe = result.rating_history_events.detect { |rhe| rhe.rating.team == team }
+    rhe = result.rating_history_events.detect { |rhe| rhe.rating.team_id == team.id }
 	  return team.name unless rhe
 	  "#{team.name} (#{rhe.change > 0 ? "+#{rhe.change}" : rhe.change })"
   end

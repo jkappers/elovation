@@ -1,8 +1,8 @@
 <tr>
 	<td><%= rating_counter + 1 %></td>
 	<td>
-  	<% if rating.team.players.length == 1 %>
-    	<%= image_tag(gravatar_url(rating.team.players.first, :size => 40)) %>
+  	<% rating.team.players.each do |player| %>
+    	<%= image_tag(gravatar_url(player, :size => 40)) %>
     <% end %>
     <%= link_to rating.team.name, team_game_path(rating.team, @game) %>
 	</td>

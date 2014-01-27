@@ -1,6 +1,6 @@
 class Result < ActiveRecord::Base
   has_many :result_teams
-  has_many :teams, :through => :result_teams
+  has_many :teams, through: :result_teams
   has_many :rating_history_events
   belongs_to :game
 
