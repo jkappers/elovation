@@ -9,6 +9,12 @@
   </div>
 </div>
 
+<div class="chart-wrapper">
+  <div id="chart-ten" style="height:200px"></div>
+</div>
+<div class="chart-wrapper">
+  <div id="chart-all" style="height:200px"></div>
+</div>
 
 <div class="pure-g" id="match-feed">
   <div class="pure-u-1">
@@ -21,14 +27,8 @@
   </div>
 </div>
 
-<div class="chart-wrapper">
-  <div id="chart-ten" style="height:200px"></div>
-</div>
-<div class="chart-wrapper">
-  <div id="chart-all" style="height:200px"></div>
-</div>
 
-
+<% content_for :javascript do %>
 <script>
   (function(){
 
@@ -137,3 +137,4 @@
     $(document).ready(createChart);
   })();
 </script>
+<% end %>

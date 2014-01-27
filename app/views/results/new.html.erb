@@ -24,6 +24,8 @@
   </div>
 </div>
 
-<%= javascript_tag do %>
-  $(".players").chosen();
+<% content_for :javascript do %>
+  <%= javascript_tag do %>
+    $(".players").chosen();
+  <% end %>
 <% end %>
