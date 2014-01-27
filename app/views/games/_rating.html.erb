@@ -1,9 +1,11 @@
-<li class="player">
+<li class="<%= rating.team.players.length > 1 ? 'team-item' : 'player-item' %>">
 	<span class="rank"><%= rating_counter + 1 %></span>
-	<% if rating.team.players.length == 1 %>
-		<%= link_to image_tag(gravatar_url(rating.team.players.first, :size => 100)), team_game_path(rating.team, @game), :class => "f-left player-image" %>
-	<% end %>
-
+	<% count = rating.team.players.length %>
+	<div class="images">
+  	<% rating.team.players.each do |player| %>
+  		<%= link_to image_tag(gravatar_url(player, :size => 100.0/count)), team_game_path(rating.team, @game), :class => "f-left player-image" %>
+  	<% end %>
+	</div>
 	<div class="f-left player-info">
 		<h3 class="name"><%= link_to rating.team.name, team_game_path(rating.team, @game) %></h3>
 		<span class="value"><%= rating.value %></span>

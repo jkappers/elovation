@@ -275,6 +275,7 @@ header{
 		position: absolute;
 		top: 0;
 		left: 0;
+		z-index: 999;
 	}
 
 	.name{
@@ -291,8 +292,15 @@ header{
 
 
 	.team-rank{
+	  .images {
+	    width: 10%;
+	    position: absolute;
+	    top: 0;
+	    left: 0;
+	    z-index: 1;
+	  }
 		.player-image{
-			display: none;
+      width: 100%;
 		}
 		.player-info{
 			width: 100%;
