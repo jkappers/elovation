@@ -497,14 +497,17 @@ form {
   /* line 461, ../sass/application.scss */
   form .submit-fieldset a {
     color: #222; }
+  /* line 467, ../sass/application.scss */
+  form input[type="submit"] {
+    width: auto; }
 
-/* line 476, ../sass/application.scss */
+/* line 480, ../sass/application.scss */
 #banner {
   height: auto;
   background: #fb5703;
   overflow: hidden;
   clear: both; }
-  /* line 483, ../sass/application.scss */
+  /* line 487, ../sass/application.scss */
   #banner ul {
     margin: 0 auto;
     height: auto; }
